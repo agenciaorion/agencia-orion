@@ -77,9 +77,49 @@ function renderNavbar() {
       </div>
     </nav>
 
-    <!-- Menu mobile — fora da nav para não ser bloqueado pelo backdrop-blur -->
-    <div id="mobile-menu" class="md:hidden fixed inset-0 top-[56px] z-[300] px-6 py-8 flex flex-col gap-2 border-t border-white/20" style="background:#621BEE;">
-      ${mobileLinks}
+    <!-- Menu mobile — tela cheia, fora da nav -->
+    <div id="mobile-menu" class="md:hidden fixed inset-0 z-[400] flex flex-col" style="background:#621BEE;">
+
+      <!-- Cabeçalho: logo + botão fechar -->
+      <div class="flex items-center justify-between px-6 py-3 border-b border-white/20" style="min-height:56px;">
+        <a href="index.html" class="flex items-center">
+          <img src="assets/images/logo.png" alt="Agência Orion" class="h-10 w-auto" style="margin-left:-8px; filter:brightness(0) invert(1);">
+        </a>
+        <button id="menu-close" class="p-2 rounded-lg text-white hover:bg-white/10 transition-colors" aria-label="Fechar menu">
+          <span class="material-symbols-outlined text-3xl">close</span>
+        </button>
+      </div>
+
+      <!-- Links de navegação -->
+      <div class="flex-1 flex flex-col px-6 py-8 gap-1">
+        ${mobileLinks}
+      </div>
+
+      <!-- Rodapé: redes sociais + CTA WhatsApp -->
+      <div class="px-6 pb-10 pt-4 border-t border-white/20 space-y-6">
+        <div class="flex items-center gap-4">
+          <span class="text-white/60 font-label-bold text-xs uppercase tracking-widest">Siga-nos</span>
+          <a href="https://instagram.com/_agencia.orion" target="_blank"
+             class="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center text-white hover:bg-white/10 transition-all" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+          </a>
+          <a href="https://www.tiktok.com/@agencia.orion" target="_blank"
+             class="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center text-white hover:bg-white/10 transition-all" aria-label="TikTok">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+              <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.16 8.16 0 004.77 1.52V6.76a4.85 4.85 0 01-1-.07z"/>
+            </svg>
+          </a>
+        </div>
+        <a href="${WHATSAPP_LINK}" target="_blank"
+           class="flex items-center justify-center gap-3 w-full bg-white text-orion-purple font-label-bold py-4 rounded-xl uppercase tracking-wider text-sm hover:bg-white/90 transition-all">
+          <svg viewBox="0 0 16 16" fill="currentColor" width="18" height="18">
+            <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+          </svg>
+          Falar pelo WhatsApp
+        </a>
+      </div>
     </div>
   `;
 
@@ -101,14 +141,21 @@ function renderNavbar() {
     }
   });
 
-  // Lógica do botão hamburguer
-  const toggle = document.getElementById("menu-toggle");
+  // Lógica do menu mobile
+  const toggle    = document.getElementById("menu-toggle");
+  const closeBtn  = document.getElementById("menu-close");
   const mobileMenu = document.getElementById("mobile-menu");
+
   if (toggle && mobileMenu) {
-    toggle.addEventListener("click", () => {
-      mobileMenu.classList.toggle("open");
-      const icon = toggle.querySelector(".material-symbols-outlined");
-      icon.textContent = mobileMenu.classList.contains("open") ? "close" : "menu";
+    toggle.addEventListener("click", () => mobileMenu.classList.add("open"));
+  }
+  if (closeBtn && mobileMenu) {
+    closeBtn.addEventListener("click", () => mobileMenu.classList.remove("open"));
+  }
+  // Fecha ao navegar (útil para scroll na mesma página)
+  if (mobileMenu) {
+    mobileMenu.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => mobileMenu.classList.remove("open"));
     });
   }
 }
