@@ -315,13 +315,13 @@ document.addEventListener("DOMContentLoaded", () => {
       const COUNT = 28;
       for (let i = 0; i < COUNT; i++) {
         const angle = (Math.PI * 2 / COUNT) * i + (Math.random() - 0.5) * 0.5;
-        const speed = Math.random() * 12 + 6;
+        const speed = Math.random() * 8 + 4;
         mParticles.push({
           x, y,
           vx: Math.cos(angle) * speed,
           vy: Math.sin(angle) * speed,
           life: 1,
-          decay: Math.random() * 0.035 + 0.04,
+          decay: Math.random() * 0.004 + 0.005,
           len: Math.random() * 12 + 8,
           angle,
           color: burstColors[Math.floor(Math.random() * burstColors.length)],
@@ -335,7 +335,7 @@ document.addEventListener("DOMContentLoaded", () => {
       mParticles = mParticles.filter(p => p.life > 0);
       mParticles.forEach(p => {
         p.x += p.vx; p.y += p.vy;
-        p.vx *= 0.91; p.vy *= 0.91;
+        p.vx *= 0.94; p.vy *= 0.94;
         p.life -= p.decay;
         mCtx.save();
         mCtx.translate(p.x, p.y);
