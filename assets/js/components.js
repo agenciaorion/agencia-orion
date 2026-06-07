@@ -75,12 +75,12 @@ function renderNavbar() {
           <span class="material-symbols-outlined">menu</span>
         </button>
       </div>
-
-      <!-- Menu mobile — drawer com visual melhorado -->
-      <div id="mobile-menu" class="md:hidden fixed inset-0 top-[72px] z-[300] px-6 py-8 flex flex-col gap-2 border-t border-white/20" style="background:#621BEE;">
-        ${mobileLinks}
-      </div>
     </nav>
+
+    <!-- Menu mobile — fora da nav para não ser bloqueado pelo backdrop-blur -->
+    <div id="mobile-menu" class="md:hidden fixed inset-0 top-[56px] z-[300] px-6 py-8 flex flex-col gap-2 border-t border-white/20" style="background:#621BEE;">
+      ${mobileLinks}
+    </div>
   `;
 
   // Injeta o menu no topo da página
