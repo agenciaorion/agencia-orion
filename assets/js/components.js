@@ -55,12 +55,8 @@ function renderNavbar() {
 
         <!-- Logo com efeito pulse no hover -->
         <a href="index.html" class="flex items-center group">
-          <!-- Logo desktop -->
           <img src="assets/images/logo.png" alt="Logo Agência Orion"
-               class="hidden sm:block h-10 w-auto transition-transform duration-300 group-hover:scale-105" style="margin-left: -8px;">
-          <!-- Logo mobile -->
-          <img src="assets/images/logo-mob.jpg" alt="Logo Agência Orion"
-               class="block sm:hidden h-10 w-10 rounded-full object-cover transition-transform duration-300 group-hover:scale-105">
+               class="h-10 w-auto transition-transform duration-300 group-hover:scale-105" style="margin-left: -8px;">
         </a>
 
         <!-- Links desktop com caixinha no hover -->
@@ -81,7 +77,7 @@ function renderNavbar() {
       </div>
 
       <!-- Menu mobile — drawer com visual melhorado -->
-      <div id="mobile-menu" class="md:hidden fixed inset-0 top-[72px] bg-surface z-40 px-6 py-8 flex flex-col gap-2 border-t border-outline-variant/30">
+      <div id="mobile-menu" class="md:hidden fixed inset-0 top-[72px] z-[300] px-6 py-8 flex flex-col gap-2 border-t border-outline-variant/30" style="background:#fcf9f8;">
         ${mobileLinks}
         <div class="mt-auto pt-8 border-t border-outline-variant/20">
           <a href="${WHATSAPP_LINK}" target="_blank"
