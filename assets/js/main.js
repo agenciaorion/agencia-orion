@@ -312,17 +312,17 @@ document.addEventListener("DOMContentLoaded", () => {
     let mAnimating = false;
 
     function spawnBurst(x, y) {
-      const COUNT = 14;
+      const COUNT = 28;
       for (let i = 0; i < COUNT; i++) {
-        const angle = (Math.PI * 2 / COUNT) * i + (Math.random() - 0.5) * 0.4;
-        const speed = Math.random() * 3.5 + 1.5;
+        const angle = (Math.PI * 2 / COUNT) * i + (Math.random() - 0.5) * 0.5;
+        const speed = Math.random() * 12 + 6;
         mParticles.push({
           x, y,
           vx: Math.cos(angle) * speed,
           vy: Math.sin(angle) * speed,
           life: 1,
-          decay: Math.random() * 0.025 + 0.018,
-          len: Math.random() * 8 + 4,
+          decay: Math.random() * 0.035 + 0.04,
+          len: Math.random() * 12 + 8,
           angle,
           color: burstColors[Math.floor(Math.random() * burstColors.length)],
         });
