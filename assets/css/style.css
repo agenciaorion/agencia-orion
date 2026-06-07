@@ -194,21 +194,14 @@ html {
 /* --- Garante que o hero nunca fique invisível --- */
 header > div > div { opacity: 1 !important; transform: none !important; }
 
-/* --- Botão CTA menu mobile: anel pulsante --- */
-.cta-pulse {
-  position: relative;
+/* --- Botão CTA menu mobile: gradiente animado interno --- */
+.cta-gradient {
+  background: linear-gradient(90deg, #621BEE, #8B45F0, #4F0DCC, #621BEE);
+  background-size: 300% 100%;
+  animation: gradient-shift 3s ease infinite;
 }
-.cta-pulse::after {
-  content: '';
-  position: absolute;
-  inset: -4px;
-  border-radius: 0.75rem;
-  border: 2px solid #621BEE;
-  opacity: 0;
-  animation: cta-ring 2s ease-out infinite;
-  pointer-events: none;
-}
-@keyframes cta-ring {
-  0%   { opacity: 0.7; transform: scale(1); }
-  100% { opacity: 0;   transform: scale(1.07); }
+@keyframes gradient-shift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
