@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contato | Agência Orion — Fale com a Agência de Marketing no Ceará</title>
+  <meta name="description" content="Entre em contato com a Agência Orion. Atendemos empresas em Ipu, Sobral, Tianguá e toda a região Noroeste do Ceará. Fale pelo WhatsApp ou envie uma mensagem.">
+  <meta name="keywords" content="contato agência de marketing Ceará, orçamento marketing digital Ceará, agência de marketing Ipu contato, agência Orion WhatsApp">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.agenciaorionce.com.br/contato.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.agenciaorionce.com.br/contato.html">
+  <meta property="og:title" content="Contato | Agência Orion — Marketing Digital no Ceará">
+  <meta property="og:description" content="Fale com a Agência Orion. Sem compromisso — entendemos o seu negócio e indicamos o melhor caminho.">
+  <meta property="og:image" content="https://www.agenciaorionce.com.br/assets/images/logo.jpg">
+  <meta property="og:locale" content="pt_BR">
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script src="assets/js/tailwind.config.js"></script>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap">
+</head>
+
+<body class="bg-background text-on-background overflow-x-hidden font-body-md">
+
+  <div id="navbar"></div>
+
+  <!-- HERO -->
+  <header class="pt-20 pb-16 px-margin-mobile md:px-margin-desktop bg-surface-container-low kinetic-bg">
+    <div class="max-w-container-max mx-auto w-full fade-in">
+      <div class="flex items-center gap-2 mb-4">
+        <span class="orion-dot"></span>
+        <span class="font-label-bold text-primary tracking-widest uppercase text-sm">Fale conosco</span>
+      </div>
+      <h1 class="font-display-lg text-[48px] md:text-[64px] text-deep-slate mb-6 leading-[1.1]">
+        Vamos conversar <br>
+        <span class="text-orion-purple">sobre o seu negócio.</span>
+      </h1>
+      <p class="font-body-lg text-body-lg text-muted-gray max-w-xl">
+        Sem compromisso. Entendemos o seu momento e indicamos o melhor caminho.
+      </p>
+    </div>
+  </header>
+
+  <!-- CONTATO -->
+  <section class="py-16 px-margin-mobile md:px-margin-desktop">
+    <div class="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+
+      <!-- Formulário -->
+      <div class="fade-in bg-stark-white rounded-3xl p-10 shadow-sm border border-outline-variant/20">
+        <h2 class="font-headline-lg text-[32px] md:text-headline-lg text-deep-slate mb-8">Envie uma mensagem</h2>
+
+        <div class="space-y-6" id="contact-form">
+
+          <div>
+            <label class="block font-label-bold text-sm text-on-surface mb-2 uppercase tracking-wider">Nome</label>
+            <input
+              type="text"
+              id="field-name"
+              placeholder="Seu nome completo"
+              class="w-full border border-outline-variant rounded-xl px-5 py-4 font-body-md text-on-surface bg-surface-container-low focus:outline-none focus:border-orion-purple focus:ring-2 focus:ring-orion-purple/20 transition-all placeholder:text-muted-gray/50"
+            >
+          </div>
+
+          <div>
+            <label class="block font-label-bold text-sm text-on-surface mb-2 uppercase tracking-wider">E-mail</label>
+            <input
+              type="email"
+              id="field-email"
+              placeholder="seu@email.com"
+              class="w-full border border-outline-variant rounded-xl px-5 py-4 font-body-md text-on-surface bg-surface-container-low focus:outline-none focus:border-orion-purple focus:ring-2 focus:ring-orion-purple/20 transition-all placeholder:text-muted-gray/50"
+            >
+          </div>
+
+          <div>
+            <label class="block font-label-bold text-sm text-on-surface mb-2 uppercase tracking-wider">Serviço de interesse</label>
+            <select
+              id="field-service"
+              class="w-full border border-outline-variant rounded-xl px-5 py-4 font-body-md text-on-surface bg-surface-container-low focus:outline-none focus:border-orion-purple focus:ring-2 focus:ring-orion-purple/20 transition-all"
+            >
+              <option value="">Selecione um serviço...</option>
+              <option value="trafego">Tráfego Pago</option>
+              <option value="design">Design</option>
+              <option value="social">Social Media</option>
+              <option value="audiovisual">AudioVisual</option>
+              <option value="outros">Outros / Não sei ainda</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block font-label-bold text-sm text-on-surface mb-2 uppercase tracking-wider">Mensagem</label>
+            <textarea
+              id="field-message"
+              rows="5"
+              placeholder="Fale um pouco sobre o seu negócio e o que você precisa..."
+              class="w-full border border-outline-variant rounded-xl px-5 py-4 font-body-md text-on-surface bg-surface-container-low focus:outline-none focus:border-orion-purple focus:ring-2 focus:ring-orion-purple/20 transition-all placeholder:text-muted-gray/50 resize-none"
+            ></textarea>
+          </div>
+
+          <button
+            id="btn-send"
+            onclick="sendToWhatsApp()"
+            class="w-full bg-orion-purple text-stark-white font-label-bold py-5 rounded-xl hover:shadow-[0_10px_30px_rgba(98,27,238,0.4)] transition-all uppercase tracking-wider text-sm"
+          >
+            Enviar pelo WhatsApp
+          </button>
+
+          <p class="text-muted-gray text-xs text-center">Ao clicar, você será redirecionado ao WhatsApp com sua mensagem preenchida automaticamente.</p>
+        </div>
+      </div>
+
+      <!-- Informações de contato -->
+      <div class="fade-in space-y-8">
+
+        <div class="bg-orion-purple text-stark-white p-8 rounded-3xl">
+          <span class="material-symbols-outlined text-4xl mb-4 block opacity-70">chat</span>
+          <h3 class="font-headline-lg text-xl mb-3">WhatsApp</h3>
+          <p class="opacity-80 mb-6">Resposta rápida. Fale com a gente agora mesmo.</p>
+          <a id="btn-whatsapp-contato" href="#" target="_blank"
+             class="inline-block bg-stark-white text-orion-purple font-label-bold px-8 py-4 rounded-xl text-sm uppercase tracking-wider hover:shadow-lg transition-all">
+            Abrir WhatsApp
+          </a>
+        </div>
+
+        <div class="bg-stark-white border border-outline-variant/20 p-8 rounded-3xl shadow-sm">
+          <span class="material-symbols-outlined text-orion-purple text-4xl mb-4 block">alternate_email</span>
+          <h3 class="font-headline-lg text-xl text-deep-slate mb-3">E-mail</h3>
+          <p class="text-muted-gray mb-3">Para propostas formais e documentos.</p>
+          <a href="mailto:contato@agenciaorion.com.br" class="text-orion-purple font-label-bold hover:underline">
+            contato@agenciaorion.com.br
+          </a>
+        </div>
+
+        <div class="bg-stark-white border border-outline-variant/20 p-8 rounded-3xl shadow-sm">
+          <span class="material-symbols-outlined text-orion-purple text-4xl mb-4 block">photo_camera</span>
+          <h3 class="font-headline-lg text-xl text-deep-slate mb-3">Instagram</h3>
+          <p class="text-muted-gray mb-3">Acompanhe nosso trabalho e mande uma DM.</p>
+          <a href="https://instagram.com/_agencia.orion" target="_blank" class="text-orion-purple font-label-bold hover:underline">
+            @_agencia.orion
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <div id="footer"></div>
+  <div id="whatsapp-fab"></div>
+
+  <script src="assets/js/components.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    // Pega os campos e monta a mensagem do WhatsApp automaticamente
+    function sendToWhatsApp() {
+      const name    = document.getElementById("field-name").value.trim();
+      const email   = document.getElementById("field-email").value.trim();
+      const service = document.getElementById("field-service").value;
+      const message = document.getElementById("field-message").value.trim();
+
+      if (!name || !message) {
+        alert("Por favor, preencha pelo menos o nome e a mensagem.");
+        return;
+      }
+
+      const serviceLabels = {
+        trafego:      "Tráfego Pago",
+        design:       "Design",
+        social:       "Social Media",
+        audiovisual:  "AudioVisual",
+        outros:       "Outros / Ainda não sei",
+      };
+
+      const serviceLabel = serviceLabels[service] || "Não informado";
+
+      const text = `Olá, Agência Orion! 👋\n\n*Nome:* ${name}\n*E-mail:* ${email || "Não informado"}\n*Serviço:* ${serviceLabel}\n\n*Mensagem:*\n${message}`;
+
+      const encoded = encodeURIComponent(text);
+      window.open(`${window.WHATSAPP_LINK}?text=${encoded}`, "_blank");
+    }
+  </script>
+
+</body>
+</html>

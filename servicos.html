@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Serviços | Agência Orion — Tráfego Pago, Design, Social Media no Ceará</title>
+  <meta name="description" content="Serviços de marketing digital da Agência Orion: Tráfego Pago, Design Gráfico, Social Media, Audiovisual e Desenvolvimento de Sites. Atendemos o Noroeste do Ceará.">
+  <meta name="keywords" content="tráfego pago Ceará, design gráfico Ceará, social media Ceará, agência de marketing Sobral, agência de marketing Ipu, marketing digital noroeste do Ceará">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.agenciaorionce.com.br/servicos.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.agenciaorionce.com.br/servicos.html">
+  <meta property="og:title" content="Serviços | Agência Orion — Marketing Digital no Ceará">
+  <meta property="og:description" content="Tráfego Pago, Design, Social Media, Audiovisual e muito mais. Soluções completas para sua empresa no Ceará.">
+  <meta property="og:image" content="https://www.agenciaorionce.com.br/assets/images/logo.jpg">
+  <meta property="og:locale" content="pt_BR">
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script src="assets/js/tailwind.config.js"></script>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap">
+
+  <style>
+    /* Quote bar slide animation */
+    #quote-bar {
+      transform: translateY(110%);
+      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    #quote-bar.visible {
+      transform: translateY(0);
+    }
+
+    /* Selected service card */
+    .service-card.is-selected {
+      border-color: #621BEE !important;
+      box-shadow: 0 0 0 3px rgba(98, 27, 238, 0.18), 0 16px 40px rgba(98, 27, 238, 0.12);
+    }
+
+    /* Quote button base */
+    .quote-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      border: 1.5px solid #621BEE;
+      color: #621BEE;
+      background: transparent;
+      font-weight: 700;
+      border-radius: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .quote-btn:hover {
+      background: rgba(98, 27, 238, 0.07);
+    }
+    .quote-btn[data-state="selected"] {
+      background: #621BEE;
+      color: #ffffff;
+      border-color: #621BEE;
+    }
+    .quote-btn[data-state="selected"]:hover {
+      background: #5016d4;
+    }
+    .quote-btn-lg { padding: 14px 28px; font-size: 13px; }
+    .quote-btn-sm { padding: 10px 18px; font-size: 11px; }
+
+    /* Hide FAB when quote bar is active */
+    .whatsapp-fab {
+      transition: opacity 0.25s ease, transform 0.25s ease !important;
+    }
+    body.quote-active .whatsapp-fab {
+      opacity: 0 !important;
+      pointer-events: none !important;
+      transform: scale(0.6) !important;
+    }
+  </style>
+</head>
+
+<body class="bg-background text-on-background overflow-x-hidden font-body-md">
+
+  <div id="navbar"></div>
+
+  <!-- HERO -->
+  <header class="pt-20 pb-16 px-margin-mobile md:px-margin-desktop bg-surface-container-low kinetic-bg">
+    <div class="max-w-container-max mx-auto w-full fade-in">
+      <div class="flex items-center gap-2 mb-4">
+        <span class="orion-dot"></span>
+        <span class="font-label-bold text-primary tracking-widest uppercase text-sm">O que fazemos</span>
+      </div>
+      <h1 class="font-display-lg text-[48px] md:text-[64px] text-deep-slate mb-6 leading-[1.1]">
+        Serviços que<br>
+        <span class="text-orion-purple">geram resultados</span>
+      </h1>
+      <p class="font-body-lg text-body-lg text-muted-gray max-w-xl">
+        Cada solução é desenvolvida com estratégia, dados e criatividade — pensada especificamente para o seu negócio.
+      </p>
+    </div>
+  </header>
+
+  <!-- SERVIÇOS DETALHADOS -->
+  <section class="py-16 px-margin-mobile md:px-margin-desktop">
+    <div class="max-w-container-max mx-auto space-y-8">
+
+      <!-- Estratégia & Branding — destaque full-width -->
+      <div data-service="Estratégia & Branding"
+           class="service-card fade-in grid grid-cols-1 md:grid-cols-2 gap-12 items-stretch bg-stark-white rounded-3xl p-8 shadow-sm border border-outline-variant/20 hover:border-orion-purple/40 hover:shadow-[0_16px_40px_rgba(98,27,238,0.1)] hover:scale-[1.005] transition-all duration-300">
+        <div>
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-16 h-16 bg-orion-purple/10 rounded-2xl flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-orion-purple text-4xl">auto_awesome</span>
+            </div>
+            <h2 class="font-headline-lg text-[28px] md:text-headline-lg text-deep-slate">Estratégia & Branding</h2>
+          </div>
+          <p class="text-muted-gray mb-6 leading-relaxed">Desenvolvemos o DNA da sua marca, posicionamento de mercado e planejamento estratégico focado em autoridade e diferenciação competitiva.</p>
+          <ul class="space-y-3 mb-5">
+            <li class="flex items-center gap-3 text-on-surface"><span class="material-symbols-outlined text-orion-purple text-xl">check_circle</span> Posicionamento de marca e mercado</li>
+            <li class="flex items-center gap-3 text-on-surface"><span class="material-symbols-outlined text-orion-purple text-xl">check_circle</span> Identidade estratégica e diferenciação</li>
+            <li class="flex items-center gap-3 text-on-surface"><span class="material-symbols-outlined text-orion-purple text-xl">check_circle</span> Planejamento de autoridade competitiva</li>
+          </ul>
+          <button class="quote-btn quote-btn-lg" data-state="default">
+            <span class="material-symbols-outlined" style="font-size:16px">add</span>
+            Adicionar ao orçamento
+          </button>
+        </div>
+        <div class="hidden md:flex items-stretch">
+          <div class="bg-orion-purple/5 rounded-2xl w-full overflow-hidden">
+            <img src="assets/images/servicos/estrategia-branding.png" alt="Estratégia & Branding" class="w-full h-full object-cover">
+          </div>
+        </div>
+      </div>
+
+      <!-- Grade 2 colunas — demais serviços -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+        <!-- Cobertura de Eventos -->
+        <div data-service="Cobertura de Eventos"
+             class="service-card fade-in bg-stark-white rounded-3xl p-6 shadow-sm border border-outline-variant/20 hover:border-orion-purple/40 hover:shadow-[0_16px_40px_rgba(98,27,238,0.1)] hover:scale-[1.005] transition-all duration-300">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-11 h-11 bg-orion-purple/10 rounded-xl flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-orion-purple text-2xl">photo_camera</span>
+            </div>
+            <h2 class="font-headline-lg text-xl text-deep-slate">Cobertura de Eventos</h2>
+          </div>
+          <p class="text-muted-gray mb-4 leading-relaxed text-sm">Registros profissionais e estratégicos do seu evento para perpetuar momentos e gerar conteúdo de impacto.</p>
+          <div class="flex gap-4 items-stretch">
+            <div class="flex flex-col flex-1">
+              <ul class="space-y-2 mb-5 text-sm flex-1">
+                <li class="flex items-center gap-2 text-on-surface"><span class="material-symbols-outlined text-orion-purple text-base">check_circle</span> Fotografia e vídeo profissional</li>
+                <li class="flex items-center gap-2 text-on-surface"><span class="material-symbols-outlined text-orion-purple text-base">check_circle</span> Conteúdo para redes sociais em tempo real</li>
+                <li class="flex items-center gap-2 text-on-surface"><span class="material-symbols-outlined text-orion-purple text-base">check_circle</span> Edição e entrega rápida</li>
+              </ul>
+              <button class="quote-btn quote-btn-sm self-start" data-state="default">
+                <span class="material-symbols-outlined" style="font-size:14px">add</span>
+                Adicionar ao orçamento
+              </button>
+            </div>
+            <div class="hidden md:block w-48 shrink-0 rounded-xl overflow-hidden bg-deep-slate relative">
+              <div class="absolute top-4 right-6 w-4 h-4 rounded-full bg-orion-purple/40"></div>
+              <div class="absolute top-10 right-14 w-2 h-2 rounded-full bg-orion-purple/25"></div>
+              <div class="absolute top-7 left-7 w-5 h-5 rounded-full bg-orion-purple/15"></div>
+              <div class="absolute bottom-8 right-5 w-2 h-2 rounded-full bg-white/10"></div>
+              <div class="absolute bottom-14 left-5 w-3 h-3 rounded-full bg-orion-purple/30"></div>
+              <div class="absolute top-16 left-10 w-2 h-2 rounded-full bg-white/10"></div>
+              <div class="absolute inset-0 flex flex-col items-center justify-center gap-3">
+                <span class="material-symbols-outlined text-orion-purple text-[56px]" style="font-variation-settings:'FILL' 0,'wght' 200,'opsz' 48">photo_camera</span>
+                <div class="flex gap-1.5 items-center">
+                  <div class="w-6 h-0.5 bg-orion-purple/30 rounded"></div>
+                  <div class="w-2 h-2 rounded-full bg-orion-purple/50"></div>
+                  <div class="w-6 h-0.5 bg-orion-purple/30 rounded"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Audiovisual -->
+        <div data-service="Audiovisual"
+             class="service-card fade-in bg-stark-white rounded-3xl p-6 shadow-sm border border-outline-variant/20 hover:border-orion-purple/40 hover:shadow-[0_16px_40px_rgba(98,27,238,0.1)] hover:scale-[1.005] transition-all duration-300">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-11 h-11 bg-orion-purple/10 rounded-xl flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-orion-purple text-2xl">videocam</span>
+            </div>
+            <h2 class="font-headline-lg text-xl text-deep-slate">AudioVisual</h2>
+          </div>
+          <p class="text-muted-gray mb-4 leading-relaxed text-sm">Produzimos conteúdo em vídeo de alta qualidade para elevar o impacto da sua marca nas redes sociais e anúncios.</p>
+          <div class="flex gap-4 items-stretch">
+            <div class="flex flex-col flex-1">
+              <ul class="space-y-2 mb-5 text-sm flex-1">
+                <li class="flex items-center gap-2 text-on-surface"><span class="material-symbols-outlined text-orion-purple text-base">check_circle</span> Reels e vídeos curtos para redes sociais</li>
+                <li class="flex items-center gap-2 text-on-surface"><span class="material-symbols-outlined text-orion-purple text-base">check_circle</span> Vídeos institucionais e comerciais</li>
+                <li class="flex items-center gap-2 text-on-surface"><span class="material-symbols-outlined text-orion-purple text-base">check_circle</span> Edição e legendagem profissional</li>
+              </ul>
+              <button class="quote-btn quote-btn-sm self-start" data-state="default">
+                <span class="material-symbols-outlined" style="font-size:14px">add</span>
+                Adicionar ao orçamento
+              </button>
+            </div>
+            <div class="hidden md:block w-48 shrink-0 rounded-xl overflow-hidden bg-deep-slate relative">
+              <div class="absolute left-0 top-0 bottom-0 w-5 flex flex-col justify-around py-3">
+                <div class="w-3 h-2 bg-white/10 rounded-sm mx-auto"></div>
+                <div class="w-3 h-2 bg-white/10 rounded-sm mx-auto"></div>
+                <div class="w-3 h-2 bg-white/10 rounded-sm mx-auto"></div>
+                <div class="w-3 h-2 bg-white/10 rounded-sm mx-auto"></div>
+                <div class="w-3 h-2 bg-white/10 rounded-sm mx-auto"></div>
+              </div>
+              <div class="absolute right-0 top-0 bottom-0 w-5 flex flex-col justify-around py-3">
+                <div class="w-3 h-2 bg-white/10 rounded-sm mx-auto"></div>
+                <div class="w-3 h-2 bg-white/10 rounded-sm mx-auto"></div>
+                <div class="w-3 h-2 bg-white/10 rounded-sm mx-auto"></div>
+                <div class="w-3 h-2 bg-white/10 rounded-sm mx-auto"></div>
+                <div class="w-3 h-2 bg-white/10 rounded-sm mx-auto"></div>
+              </div>
+              <div class="absolute inset-0 flex items-center justify-center">
+                <span class="material-symbols-outlined text-orion-purple text-[56px]" style="font-variation-settings:'FILL' 0,'wght' 200,'opsz' 48">videocam</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tráfego Pago -->
+        <div data-service="Tráfego Pago"
+             class="service-card fade-in bg-stark-white rounded-3xl p-6 shadow-sm border border-outline-variant/20 hover:border-orion-purple/40 hover:shadow-[0_16px_40px_rgba(98,27,238,0.1)] hover:scale-[1.005] transition-all duration-300">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-11 h-11 bg-orion-purple/10 rounded-xl flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-orion-purple text-2xl">ads_click</span>
+            </div>
+            <h2 class="font-headline-lg text-xl text-deep-slate">Tráfego Pago</h2>
+          </div>
+          <p class="text-muted-gray mb-4 leading-relaxed text-sm">Gerenciamos campanhas no Google Ads, Meta Ads e TikTok Ads com foco em conversão real e ROI para sua empresa.</p>
+          <div class="flex gap-4 items-stretch">
+            <div class="flex flex-col flex-1">
+              <ul class="space-y-2 mb-5 text-sm flex-1">
+                <li class="flex items-center gap-2 text-on-surface"><span class="material-symbols-outlined text-orion-purple text-base">check_circle</span> Google Ads (Search, Display, YouTube)</li>
+                <li class="flex items-center gap-2 text-on-surface"><span class="material-symbols-outlined text-orion-purple text-base">check_circle</span> Meta Ads (Facebook e Instagram)</li>
+                <li class="flex items-center gap-2 text-on-surface"><span class="material-symbols-outlined text-orion-purple text-base">check_circle</span> Relatórios mensais de performance</li>
+              </ul>
+              <button class="quote-btn quote-btn-sm self-start" data-state="default">
+                <span class="material-symbols-outlined" style="font-size:14px">add</span>
+                Adicionar ao orçamento
+              </button>
+            </div>
+            <div class="hidden md:block w-48 shrink-0 rounded-xl overflow-hidden bg-deep-slate relative p-5 flex flex-col justify-center">
+              <div class="flex items-end gap-1.5 h-20 mb-4">
+                <div class="flex-1 rounded-t-sm" style="height:25%; background:rgba(98,27,238,0.25)"></div>
+                <div class="flex-1 rounded-t-sm" style="height:42%; background:rgba(98,27,238,0.35)"></div>
+                <div class="flex-1 rounded-t-sm" style="height:60%; background:rgba(98,27,238,0.50)"></div>
+                <div class="flex-1 rounded-t-sm" style="height:78%; background:rgba(98,27,238,0.65)"></div>
+                <div class="flex-1 rounded-t-sm" style="height:100%; background:#621BEE"></div>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-orion-purple text-lg">ads_click</span>
+                <div class="flex-1 h-px bg-orion-purple/20 rounded"></div>
+                <span class="text-orion-purple/60 text-xs font-mono">+ROI</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Influencers -->
+        <div data-service="Influencers"
+             class="service-card fade-in bg-stark-white rounded-3xl p-6 shadow-sm border border-outline-variant/20 hover:border-orion-purple/40 hover:shadow-[0_16px_40px_rgba(98,27,238,0.1)] hover:scale-[1.005] transition-all duration-300">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-11 h-11 bg-orion-purple/10 rounded-xl flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-orion-purple text-2xl">group</span>
+            </div>
+            <h2 class="font-headline-lg text-xl text-deep-slate">Influencers</h2>
+          </div>
+          <p class="text-muted-gray mb-4 leading-relaxed text-sm">Conectamos sua marca com criadores que falam com seu público de forma autêntica e geram engajamento real.</p>
+          <div class="flex gap-4 items-stretch">
+            <div class="flex flex-col flex-1">
+              <ul class="space-y-2 mb-5 text-sm flex-1">
+                <li class="flex items-center gap-2 text-on-surface"><span class="material-symbols-outlined text-orion-purple text-base">check_circle</span> Conexão com criadores do seu nicho</li>
+                <li class="flex items-center gap-2 text-on-surface"><span class="material-symbols-outlined text-orion-purple text-base">check_circle</span> Campanhas autênticas e mensuráveis</li>
+                <li class="flex items-center gap-2 text-on-surface"><span class="material-symbols-outlined text-orion-purple text-base">check_circle</span> Micro e macro influenciadores</li>
+              </ul>
+              <button class="quote-btn quote-btn-sm self-start" data-state="default">
+                <span class="material-symbols-outlined" style="font-size:14px">add</span>
+                Adicionar ao orçamento
+              </button>
+            </div>
+            <div class="hidden md:block w-48 shrink-0 rounded-xl overflow-hidden bg-deep-slate relative">
+              <span class="material-symbols-outlined absolute top-3 right-4 text-orion-purple/50 text-base" style="font-variation-settings:'FILL' 1">star</span>
+              <span class="material-symbols-outlined absolute top-9 left-4 text-orion-purple/30 text-sm" style="font-variation-settings:'FILL' 1">star</span>
+              <span class="material-symbols-outlined absolute bottom-6 right-6 text-orion-purple/40 text-lg" style="font-variation-settings:'FILL' 1">favorite</span>
+              <span class="material-symbols-outlined absolute bottom-10 left-5 text-orion-purple/25 text-sm" style="font-variation-settings:'FILL' 1">star</span>
+              <div class="absolute inset-0 flex flex-col items-center justify-center gap-3">
+                <span class="material-symbols-outlined text-orion-purple text-[56px]" style="font-variation-settings:'FILL' 0,'wght' 200,'opsz' 48">group</span>
+                <div class="flex gap-1.5">
+                  <div class="w-2 h-2 rounded-full bg-orion-purple/40"></div>
+                  <div class="w-2 h-2 rounded-full bg-orion-purple/70"></div>
+                  <div class="w-2 h-2 rounded-full bg-orion-purple/40"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Social Media -->
+        <div data-service="Social Media"
+             class="service-card fade-in bg-stark-white rounded-3xl p-6 shadow-sm border border-outline-variant/20 hover:border-orion-purple/40 hover:shadow-[0_16px_40px_rgba(98,27,238,0.1)] hover:scale-[1.005] transition-all duration-300">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-11 h-11 bg-orion-purple/10 rounded-xl flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-orion-purple text-2xl">share</span>
+            </div>
+            <h2 class="font-headline-lg text-xl text-deep-slate">Social Media</h2>
+          </div>
+          <p class="text-muted-gray mb-4 leading-relaxed text-sm">Gerenciamos suas redes sociais com estratégia de conteúdo personalizada e análise de métricas para crescimento consistente.</p>
+          <div class="flex gap-4 items-stretch">
+            <div class="flex flex-col flex-1">
+              <ul class="space-y-2 mb-5 text-sm flex-1">
+                <li class="flex items-center gap-2 text-on-surface"><span class="material-symbols-outlined text-orion-purple text-base">check_circle</span> Planejamento de conteúdo mensal</li>
+                <li class="flex items-center gap-2 text-on-surface"><span class="material-symbols-outlined text-orion-purple text-base">check_circle</span> Instagram, TikTok e LinkedIn</li>
+                <li class="flex items-center gap-2 text-on-surface"><span class="material-symbols-outlined text-orion-purple text-base">check_circle</span> Relatório de engajamento e crescimento</li>
+              </ul>
+              <button class="quote-btn quote-btn-sm self-start" data-state="default">
+                <span class="material-symbols-outlined" style="font-size:14px">add</span>
+                Adicionar ao orçamento
+              </button>
+            </div>
+            <div class="hidden md:block w-48 shrink-0 rounded-xl overflow-hidden bg-deep-slate relative p-4 flex flex-col justify-center">
+              <div class="grid grid-cols-2 gap-2 h-full">
+                <div class="bg-orion-purple/25 rounded-lg flex items-center justify-center py-4">
+                  <span class="material-symbols-outlined text-orion-purple text-2xl" style="font-variation-settings:'FILL' 0,'wght' 200">image</span>
+                </div>
+                <div class="bg-orion-purple/40 rounded-lg flex items-center justify-center py-4">
+                  <span class="material-symbols-outlined text-orion-purple text-2xl" style="font-variation-settings:'FILL' 1">favorite</span>
+                </div>
+                <div class="bg-white/5 rounded-lg flex items-center justify-center py-4">
+                  <span class="material-symbols-outlined text-white/30 text-2xl" style="font-variation-settings:'FILL' 0,'wght' 200">chat_bubble</span>
+                </div>
+                <div class="bg-orion-purple/15 rounded-lg flex items-center justify-center py-4">
+                  <span class="material-symbols-outlined text-orion-purple/60 text-2xl" style="font-variation-settings:'FILL' 0,'wght' 200">share</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Masterização de Áudio -->
+        <div data-service="Masterização de Áudio"
+             class="service-card fade-in bg-stark-white rounded-3xl p-6 shadow-sm border border-outline-variant/20 hover:border-orion-purple/40 hover:shadow-[0_16px_40px_rgba(98,27,238,0.1)] hover:scale-[1.005] transition-all duration-300">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-11 h-11 bg-orion-purple/10 rounded-xl flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-orion-purple text-2xl">graphic_eq</span>
+            </div>
+            <h2 class="font-headline-lg text-xl text-deep-slate">Masterização de Áudio</h2>
+          </div>
+          <p class="text-muted-gray mb-4 leading-relaxed text-sm">Tratamento sonoro profissional para podcasts, vídeos e peças publicitárias com qualidade de estúdio.</p>
+          <div class="flex gap-4 items-stretch">
+            <div class="flex flex-col flex-1">
+              <ul class="space-y-2 mb-5 text-sm flex-1">
+                <li class="flex items-center gap-2 text-on-surface"><span class="material-symbols-outlined text-orion-purple text-base">check_circle</span> Tratamento sonoro para podcasts e vídeos</li>
+                <li class="flex items-center gap-2 text-on-surface"><span class="material-symbols-outlined text-orion-purple text-base">check_circle</span> Equalização e mixagem profissional</li>
+                <li class="flex items-center gap-2 text-on-surface"><span class="material-symbols-outlined text-orion-purple text-base">check_circle</span> Entrega em múltiplos formatos</li>
+              </ul>
+              <button class="quote-btn quote-btn-sm self-start" data-state="default">
+                <span class="material-symbols-outlined" style="font-size:14px">add</span>
+                Adicionar ao orçamento
+              </button>
+            </div>
+            <div class="hidden md:block w-48 shrink-0 rounded-xl overflow-hidden bg-deep-slate relative p-5 flex flex-col justify-center">
+              <div class="flex items-end justify-center gap-1.5 h-20 mb-4">
+                <div class="w-3 rounded-t-sm" style="height:40%; background:rgba(98,27,238,0.35)"></div>
+                <div class="w-3 rounded-t-sm" style="height:70%; background:rgba(98,27,238,0.55)"></div>
+                <div class="w-3 rounded-t-sm" style="height:50%; background:rgba(98,27,238,0.45)"></div>
+                <div class="w-3 rounded-t-sm" style="height:95%; background:#621BEE"></div>
+                <div class="w-3 rounded-t-sm" style="height:60%; background:rgba(98,27,238,0.50)"></div>
+                <div class="w-3 rounded-t-sm" style="height:80%; background:rgba(98,27,238,0.65)"></div>
+                <div class="w-3 rounded-t-sm" style="height:45%; background:rgba(98,27,238,0.38)"></div>
+              </div>
+              <div class="flex justify-center">
+                <span class="material-symbols-outlined text-orion-purple/50 text-xl">graphic_eq</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Design -->
+        <div data-service="Design Gráfico"
+             class="service-card fade-in bg-stark-white rounded-3xl p-6 shadow-sm border border-outline-variant/20 hover:border-orion-purple/40 hover:shadow-[0_16px_40px_rgba(98,27,238,0.1)] hover:scale-[1.005] transition-all duration-300">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-11 h-11 bg-orion-purple/10 rounded-xl flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-orion-purple text-2xl">brush</span>
+            </div>
+            <h2 class="font-headline-lg text-xl text-deep-slate">Design</h2>
+          </div>
+          <p class="text-muted-gray mb-4 leading-relaxed text-sm">Criamos identidades visuais que comunicam a essência da sua marca com coerência e impacto visual.</p>
+          <div class="flex gap-4 items-stretch">
+            <div class="flex flex-col flex-1">
+              <ul class="space-y-2 mb-5 text-sm flex-1">
+                <li class="flex items-center gap-2 text-on-surface"><span class="material-symbols-outlined text-orion-purple text-base">check_circle</span> Identidade visual e logotipo</li>
+                <li class="flex items-center gap-2 text-on-surface"><span class="material-symbols-outlined text-orion-purple text-base">check_circle</span> Posts e stories para redes sociais</li>
+                <li class="flex items-center gap-2 text-on-surface"><span class="material-symbols-outlined text-orion-purple text-base">check_circle</span> Materiais impressos e digitais</li>
+              </ul>
+              <button class="quote-btn quote-btn-sm self-start" data-state="default">
+                <span class="material-symbols-outlined" style="font-size:14px">add</span>
+                Adicionar ao orçamento
+              </button>
+            </div>
+            <div class="hidden md:block w-48 shrink-0 rounded-xl overflow-hidden bg-deep-slate relative">
+              <div class="absolute top-3 right-3 flex gap-1.5">
+                <div class="w-3.5 h-3.5 rounded-full bg-orion-purple"></div>
+                <div class="w-3.5 h-3.5 rounded-full" style="background:rgba(98,27,238,0.5)"></div>
+                <div class="w-3.5 h-3.5 rounded-full bg-white/20"></div>
+              </div>
+              <div class="absolute bottom-4 left-4 w-10 h-10 border-2 rounded-lg rotate-12" style="border-color:rgba(98,27,238,0.35)"></div>
+              <div class="absolute bottom-6 left-10 w-6 h-6 border-2 rounded-full" style="border-color:rgba(98,27,238,0.20)"></div>
+              <div class="absolute inset-0 flex items-center justify-center">
+                <span class="material-symbols-outlined text-orion-purple text-[56px]" style="font-variation-settings:'FILL' 0,'wght' 200,'opsz' 48">brush</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Desenvolvimento de WebSites e Apps -->
+        <div data-service="Sites & Apps"
+             class="service-card fade-in bg-stark-white rounded-3xl p-6 shadow-sm border border-outline-variant/20 hover:border-orion-purple/40 hover:shadow-[0_16px_40px_rgba(98,27,238,0.1)] hover:scale-[1.005] transition-all duration-300">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-11 h-11 bg-orion-purple/10 rounded-xl flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-orion-purple text-2xl">code</span>
+            </div>
+            <h2 class="font-headline-lg text-xl text-deep-slate">Desenvolvimento de WebSites e Apps</h2>
+          </div>
+          <p class="text-muted-gray mb-4 leading-relaxed text-sm">Landing pages de alta performance, e-commerces e aplicativos personalizados com as tecnologias mais recentes do mercado.</p>
+          <div class="flex gap-4 items-stretch">
+            <div class="flex flex-col flex-1">
+              <ul class="space-y-2 mb-5 text-sm flex-1">
+                <li class="flex items-center gap-2 text-on-surface"><span class="material-symbols-outlined text-orion-purple text-base">check_circle</span> Landing pages de alta performance</li>
+                <li class="flex items-center gap-2 text-on-surface"><span class="material-symbols-outlined text-orion-purple text-base">check_circle</span> E-commerces personalizados</li>
+                <li class="flex items-center gap-2 text-on-surface"><span class="material-symbols-outlined text-orion-purple text-base">check_circle</span> Aplicativos web e mobile</li>
+              </ul>
+              <button class="quote-btn quote-btn-sm self-start" data-state="default">
+                <span class="material-symbols-outlined" style="font-size:14px">add</span>
+                Adicionar ao orçamento
+              </button>
+            </div>
+            <div class="hidden md:block w-48 shrink-0 rounded-xl overflow-hidden bg-deep-slate relative p-5 flex flex-col justify-center gap-2">
+              <div class="flex items-center gap-2">
+                <span class="text-orion-purple text-xs font-mono">&lt;</span>
+                <div class="h-1.5 rounded flex-1" style="background:rgba(98,27,238,0.5)"></div>
+                <span class="text-orion-purple text-xs font-mono">/&gt;</span>
+              </div>
+              <div class="flex items-center gap-2 pl-3">
+                <div class="h-1.5 bg-white/15 rounded w-14"></div>
+              </div>
+              <div class="flex items-center gap-2 pl-3">
+                <div class="h-1.5 rounded w-20" style="background:rgba(98,27,238,0.35)"></div>
+              </div>
+              <div class="flex items-center gap-2 pl-3">
+                <div class="h-1.5 bg-white/10 rounded w-10"></div>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-orion-purple text-xs font-mono">&lt;</span>
+                <div class="h-1.5 rounded w-8" style="background:rgba(98,27,238,0.30)"></div>
+                <span class="text-orion-purple text-xs font-mono">/&gt;</span>
+              </div>
+              <div class="h-px bg-white/10 my-1"></div>
+              <div class="flex gap-2">
+                <div class="flex-1 h-6 bg-white/5 rounded"></div>
+                <div class="flex-1 h-6 rounded flex items-center justify-center" style="background:#621BEE">
+                  <span class="text-white text-[9px] font-bold tracking-wide">OK</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 bg-orion-purple text-stark-white text-center px-margin-mobile md:px-margin-desktop">
+    <div class="max-w-container-max mx-auto fade-in">
+      <h2 class="font-headline-lg text-[32px] md:text-[48px] mb-6">Não sabe por onde começar?</h2>
+      <p class="text-stark-white/70 text-body-lg mb-10 max-w-xl mx-auto">Fale com a gente. Entendemos o seu negócio e indicamos qual serviço faz mais sentido para você agora.</p>
+      <a href="contato.html" class="inline-block bg-stark-white text-orion-purple font-label-bold px-10 py-5 rounded-xl hover:shadow-xl transition-all uppercase tracking-wider text-sm">
+        Conversar com a Orion
+      </a>
+    </div>
+  </section>
+
+  <div id="footer"></div>
+  <div id="whatsapp-fab"></div>
+
+  <!-- BARRA DE ORÇAMENTO FIXA -->
+  <div id="quote-bar" class="fixed bottom-0 left-0 right-0 z-[100]">
+    <div class="bg-[#0d0d1a] border-t-2 border-orion-purple/70 shadow-[0_-8px_40px_rgba(0,0,0,0.45)] px-margin-mobile md:px-margin-desktop py-4">
+      <div class="max-w-container-max mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+
+        <!-- Contador -->
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-full bg-orion-purple flex items-center justify-center shrink-0">
+            <span id="quote-badge" class="text-white text-xs font-bold leading-none">0</span>
+          </div>
+          <span id="quote-count" class="text-white font-bold text-sm tracking-wide"></span>
+        </div>
+
+        <!-- Ações -->
+        <div class="flex items-center gap-3 w-full sm:w-auto">
+          <button id="quote-clear"
+                  class="text-gray-400 hover:text-white text-xs font-bold uppercase tracking-wider transition-colors px-3 py-2 rounded-lg hover:bg-white/5">
+            Limpar
+          </button>
+          <button id="quote-send"
+                  class="flex-1 sm:flex-none flex items-center justify-center gap-2 bg-orion-purple text-white font-bold px-6 py-3 rounded-xl hover:shadow-[0_8px_28px_rgba(98,27,238,0.55)] hover:bg-[#5016d4] transition-all text-sm uppercase tracking-wider">
+            <svg fill="currentColor" width="18" height="18" viewBox="0 0 16 16" aria-hidden="true">
+              <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+            </svg>
+            Solicitar Orçamento
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/components.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    (function () {
+      const selected = new Set();
+
+      function updateBar() {
+        const n = selected.size;
+        const bar = document.getElementById('quote-bar');
+        document.getElementById('quote-badge').textContent = n;
+        document.getElementById('quote-count').textContent =
+          n === 1 ? '1 serviço selecionado' : `${n} serviços selecionados`;
+
+        if (n > 0) {
+          bar.classList.add('visible');
+          document.body.classList.add('quote-active');
+        } else {
+          bar.classList.remove('visible');
+          document.body.classList.remove('quote-active');
+        }
+      }
+
+      document.querySelectorAll('.quote-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          const card = btn.closest('.service-card');
+          const service = card.dataset.service;
+
+          if (selected.has(service)) {
+            selected.delete(service);
+            card.classList.remove('is-selected');
+            btn.dataset.state = 'default';
+            btn.innerHTML =
+              '<span class="material-symbols-outlined" style="font-size:14px">add</span> Adicionar ao orçamento';
+          } else {
+            selected.add(service);
+            card.classList.add('is-selected');
+            btn.dataset.state = 'selected';
+            btn.innerHTML =
+              '<span class="material-symbols-outlined" style="font-size:14px">check</span> Adicionado';
+          }
+
+          updateBar();
+        });
+      });
+
+      document.getElementById('quote-clear').addEventListener('click', function () {
+        selected.clear();
+        document.querySelectorAll('.service-card').forEach(function (c) {
+          c.classList.remove('is-selected');
+        });
+        document.querySelectorAll('.quote-btn').forEach(function (b) {
+          b.dataset.state = 'default';
+          b.innerHTML =
+            '<span class="material-symbols-outlined" style="font-size:14px">add</span> Adicionar ao orçamento';
+        });
+        updateBar();
+      });
+
+      document.getElementById('quote-send').addEventListener('click', function () {
+        if (selected.size === 0) return;
+        var serviceLines = Array.from(selected).map(function (s) { return '• ' + s; }).join('\n');
+        var msg = 'Olá Orion!\n\nGostaria de solicitar um orçamento para os seguintes serviços:\n\n' + serviceLines + '\n\nAguardo retorno. Obrigado!';
+        var base = (window.WHATSAPP_LINK || 'https://wa.me/5588998157783');
+        window.open(base + '?text=' + encodeURIComponent(msg), '_blank');
+      });
+    })();
+  </script>
+
+</body>
+</html>

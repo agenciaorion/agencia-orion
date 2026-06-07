@@ -1,0 +1,195 @@
+/* ============================================================
+   STYLE.CSS — AGÊNCIA ORION
+   Apenas o que o Tailwind não consegue fazer sozinho:
+   animações customizadas, o "Orion Dot" e efeitos especiais.
+   ============================================================ */
+
+/* --- Fontes --- */
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@600;700;800&family=Inter:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
+
+/* --- Ícones do Google --- */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* --- Orion Dot: o ponto roxo da marca --- */
+.orion-dot {
+  width: 12px;
+  height: 12px;
+  background-color: #621BEE;
+  border-radius: 50%;
+  display: inline-block;
+  transition: transform 0.15s ease;
+}
+
+/* --- Fundo com gradiente sutil no hero --- */
+.kinetic-bg {
+  background-image: radial-gradient(
+    circle at 100% 100%,
+    rgba(98, 27, 238, 0.05) 0%,
+    transparent 50%
+  );
+}
+
+/* --- Animação de entrada suave para seções --- */
+.fade-in {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Menu mobile: drawer que ocupa a tela abaixo da navbar --- */
+#mobile-menu {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform: translateY(-12px);
+  opacity: 0;
+  pointer-events: none;
+}
+
+#mobile-menu.open {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* --- Linha ativa no menu de navegação --- */
+.nav-link.active {
+  color: #621BEE;
+  font-weight: 700;
+}
+
+/* --- Botão WhatsApp flutuante --- */
+.whatsapp-fab {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 40;
+  background-color: #25D366;
+  color: white;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.whatsapp-fab:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 32px rgba(37, 211, 102, 0.45);
+}
+
+/* --- Compensação do navbar fixo --- */
+body {
+  padding-top: 56px;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+/* --- Seleção de texto com cor da marca --- */
+::selection {
+  background-color: #621BEE;
+  color: white;
+}
+
+/* --- Foguete: animação de decolagem --- */
+@keyframes rocketLaunch {
+  0%   { transform: translateY(0px);    opacity: 1; }
+  100% { transform: translateY(-340px); opacity: 0.8; }
+}
+
+@keyframes trailGrow {
+  0%   { height: 0px;   opacity: 0; }
+  100% { height: 180px; opacity: 1; }
+}
+
+@keyframes flameFlicker {
+  0%, 100% { transform: scaleY(1) scaleX(1); }
+  50%       { transform: scaleY(1.15) scaleX(0.9); }
+}
+
+#rocket {
+  animation: rocketLaunch 4.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation-delay: 2s;
+}
+
+#rocket-trail > div:first-child {
+  height: 0;
+  animation: trailGrow 3.5s ease-out forwards;
+  animation-delay: 2.5s;
+}
+
+/* --- Foguete diagonal: cima-direita --- */
+@keyframes rocketDiagonal {
+  0%   { transform: translate(0px, 0px) rotate(-40deg);      opacity: 1; }
+  80%  { transform: translate(260px, -320px) rotate(-40deg); opacity: 0.8; }
+  100% { transform: translate(340px, -420px) rotate(-40deg); opacity: 0; }
+}
+
+@keyframes trailDiagonal {
+  0%   { opacity: 0;   transform: scaleY(0); }
+  30%  { opacity: 0.6; transform: scaleY(1); }
+  100% { opacity: 0;   transform: scaleY(1.5) translateY(-60px); }
+}
+
+#rocket {
+  animation: rocketDiagonal 4s cubic-bezier(0.4, 0, 0.2, 1) forwards !important;
+  animation-delay: 2s !important;
+}
+
+/* --- Foguete v3: aparece após typewriter, voa diagonal e some --- */
+@keyframes rocketAppear {
+  0%   { opacity: 0; transform: scale(0.8); }
+  100% { opacity: 1; transform: scale(1);   }
+}
+
+@keyframes rocketFly {
+  0%   { transform: translate(0, 0);          opacity: 1; }
+  100% { transform: translate(280px, -320px); opacity: 0; }
+}
+
+.rocket-show {
+  animation: rocketAppear 0.6s ease forwards;
+}
+
+/* --- Foguete v4: sobe em linha reta vertical --- */
+@keyframes rocketUp {
+  0%   { transform: translateY(0px);    opacity: 1; }
+  85%  { transform: translateY(-600px); opacity: 0.7; }
+  100% { transform: translateY(-700px); opacity: 0; }
+}
+
+.rocket-fly {
+  animation: rocketUp 3s cubic-bezier(0.4, 0, 0.2, 1) forwards !important;
+}
+
+/* --- Foguete seção vídeo --- */
+@keyframes sectionRocketUp {
+  0%   { transform: translateY(0);      opacity: 0.85; }
+  80%  { transform: translateY(-500px); opacity: 0.5;  }
+  100% { transform: translateY(-600px); opacity: 0;    }
+}
+
+.section-rocket-fly {
+  animation: sectionRocketUp 3.5s cubic-bezier(0.4, 0, 0.15, 1) forwards;
+}
+
+/* --- Foguete esquerdo da seção vídeo --- */
+@keyframes sectionRocketLeftUp {
+  0%   { transform: translateY(0);      opacity: 0.7; }
+  80%  { transform: translateY(-420px); opacity: 0.4; }
+  100% { transform: translateY(-500px); opacity: 0;   }
+}
+.section-rocket-left-fly { animation: sectionRocketLeftUp 3s cubic-bezier(0.4, 0, 0.15, 1) forwards; }
+
+/* --- Garante que o hero nunca fique invisível --- */
+header > div > div { opacity: 1 !important; transform: none !important; }
