@@ -35,7 +35,7 @@
     </div>
   </header>
 
-  <!-- TABS + GRID -->
+  <!-- TABS + FEED -->
   <section class="py-16 px-margin-mobile md:px-margin-desktop">
     <div class="max-w-container-max mx-auto">
 
@@ -54,61 +54,115 @@
       </div>
 
       <!-- =====================================================
-           GRID DE POSTS (proporção 3:4)
+           FEED DE POSTS (proporção 3:4)
            COMO ADICIONAR UM POST:
-           1. Baixe a imagem do Instagram
-           2. Coloque em: assets/images/posts/nome-do-arquivo.jpg
-           3. Copie um card abaixo
-           4. Atualize data-src, data-title e data-date
-           5. Substitua o conteúdo placeholder por <img src="..." ...>
+           1. Baixe a imagem e coloque em: assets/images/posts/nome.jpg
+           2. Copie um card abaixo
+           3. Atualize: data-src, data-title, data-date, data-desc, data-tags
+           4. Substitua o gradiente por: <img src="assets/images/posts/nome.jpg" class="w-full h-full object-cover">
+           5. Atualize título, data e descrição no painel de info
       ====================================================== -->
       <div id="grid-posts">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
 
           <!-- POST: Dia do Trabalhador -->
-          <div class="post-card group relative rounded-2xl overflow-hidden cursor-pointer fade-in"
-               data-src="" data-title="Dia do Trabalhador" data-date="01 de Maio, 2025" data-type="post">
-            <div class="aspect-[3/4] bg-gradient-to-br from-orion-purple to-[#3A00A0] flex flex-col items-center justify-center relative select-none">
-              <span class="material-symbols-outlined text-white/15 text-[96px]" style="font-variation-settings:'FILL' 1,'wght' 400">work</span>
-              <div class="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-black/60 to-transparent">
-                <p class="text-white font-label-bold text-base">Dia do Trabalhador</p>
-                <p class="text-white/60 text-xs mt-0.5">01 de Maio, 2025</p>
+          <div class="post-card group flex rounded-2xl overflow-hidden bg-stark-white border border-outline-variant/20 shadow-sm hover:shadow-xl hover:border-orion-purple/25 transition-all duration-300 cursor-pointer"
+               data-src=""
+               data-title="Dia do Trabalhador"
+               data-date="01 de Maio, 2025"
+               data-desc="Uma data para celebrar quem faz o Brasil acontecer todos os dias. Feliz Dia do Trabalhador! 🎉"
+               data-tags="#diadotrabalhador #agenciaorion #marketingdigital #ceara"
+               data-type="post">
+
+            <!-- Mídia: 45% do card, proporção 3:4 -->
+            <div class="relative w-[45%] shrink-0 overflow-hidden bg-gradient-to-br from-orion-purple to-[#3A00A0] select-none">
+              <div class="aspect-[3/4] h-full w-full flex items-center justify-center">
+                <span class="material-symbols-outlined text-white/20 text-[80px]" style="font-variation-settings:'FILL' 1,'wght' 400">work</span>
               </div>
-              <div class="absolute inset-0 bg-deep-slate/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <div class="w-14 h-14 bg-orion-purple rounded-full flex items-center justify-center shadow-lg">
-                  <span class="material-symbols-outlined text-white text-2xl">zoom_in</span>
+              <div class="absolute inset-0 bg-deep-slate/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <div class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/30">
+                  <span class="material-symbols-outlined text-white text-xl">zoom_in</span>
                 </div>
               </div>
             </div>
+
+            <!-- Info -->
+            <div class="flex-1 min-w-0 p-5 flex flex-col justify-between border-l border-outline-variant/15">
+              <div>
+                <div class="flex items-center gap-2 mb-3">
+                  <span class="inline-flex items-center gap-1 text-xs font-label-bold uppercase tracking-wider text-orion-purple bg-orion-purple/10 px-2.5 py-1 rounded-full">
+                    <span class="material-symbols-outlined text-xs" style="font-variation-settings:'FILL' 1,'wght' 400">photo_camera</span>
+                    Post
+                  </span>
+                </div>
+                <p class="font-label-bold text-deep-slate text-base leading-snug mb-1">Dia do Trabalhador</p>
+                <p class="text-muted-gray text-xs mb-4">01 de Maio, 2025</p>
+                <p class="text-muted-gray text-sm leading-relaxed">
+                  Uma data para celebrar quem faz o Brasil acontecer todos os dias. Feliz Dia do Trabalhador! 🎉
+                </p>
+              </div>
+              <div class="flex items-center gap-1.5 text-orion-purple mt-5 pt-4 border-t border-outline-variant/15">
+                <span class="text-xs font-label-bold uppercase tracking-wider">Ver post</span>
+                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+              </div>
+            </div>
+
           </div>
 
           <!-- POST: Dia das Mães -->
-          <div class="post-card group relative rounded-2xl overflow-hidden cursor-pointer fade-in"
-               data-src="" data-title="Dia das Mães" data-date="11 de Maio, 2025" data-type="post">
-            <div class="aspect-[3/4] bg-gradient-to-br from-[#8B45F0] to-orion-purple flex flex-col items-center justify-center relative select-none">
-              <span class="material-symbols-outlined text-white/15 text-[96px]" style="font-variation-settings:'FILL' 1,'wght' 400">favorite</span>
-              <div class="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-black/60 to-transparent">
-                <p class="text-white font-label-bold text-base">Dia das Mães</p>
-                <p class="text-white/60 text-xs mt-0.5">11 de Maio, 2025</p>
+          <div class="post-card group flex rounded-2xl overflow-hidden bg-stark-white border border-outline-variant/20 shadow-sm hover:shadow-xl hover:border-orion-purple/25 transition-all duration-300 cursor-pointer"
+               data-src=""
+               data-title="Dia das Mães"
+               data-date="11 de Maio, 2025"
+               data-desc="Para todas as mães que são a força por trás de cada conquista. Com amor, Agência Orion. ❤️"
+               data-tags="#diadasmaes #agenciaorion #marketing #ceara"
+               data-type="post">
+
+            <div class="relative w-[45%] shrink-0 overflow-hidden bg-gradient-to-br from-[#8B45F0] to-orion-purple select-none">
+              <div class="aspect-[3/4] h-full w-full flex items-center justify-center">
+                <span class="material-symbols-outlined text-white/20 text-[80px]" style="font-variation-settings:'FILL' 1,'wght' 400">favorite</span>
               </div>
-              <div class="absolute inset-0 bg-deep-slate/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <div class="w-14 h-14 bg-orion-purple rounded-full flex items-center justify-center shadow-lg">
-                  <span class="material-symbols-outlined text-white text-2xl">zoom_in</span>
+              <div class="absolute inset-0 bg-deep-slate/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <div class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/30">
+                  <span class="material-symbols-outlined text-white text-xl">zoom_in</span>
                 </div>
               </div>
             </div>
+
+            <div class="flex-1 min-w-0 p-5 flex flex-col justify-between border-l border-outline-variant/15">
+              <div>
+                <div class="flex items-center gap-2 mb-3">
+                  <span class="inline-flex items-center gap-1 text-xs font-label-bold uppercase tracking-wider text-orion-purple bg-orion-purple/10 px-2.5 py-1 rounded-full">
+                    <span class="material-symbols-outlined text-xs" style="font-variation-settings:'FILL' 1,'wght' 400">photo_camera</span>
+                    Post
+                  </span>
+                </div>
+                <p class="font-label-bold text-deep-slate text-base leading-snug mb-1">Dia das Mães</p>
+                <p class="text-muted-gray text-xs mb-4">11 de Maio, 2025</p>
+                <p class="text-muted-gray text-sm leading-relaxed">
+                  Para todas as mães que são a força por trás de cada conquista. Com amor, Agência Orion. ❤️
+                </p>
+              </div>
+              <div class="flex items-center gap-1.5 text-orion-purple mt-5 pt-4 border-t border-outline-variant/15">
+                <span class="text-xs font-label-bold uppercase tracking-wider">Ver post</span>
+                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+              </div>
+            </div>
+
           </div>
 
-          <!-- SLOT: Adicionar novo post -->
-          <div class="group relative rounded-2xl overflow-hidden border-2 border-dashed border-orion-purple/25 fade-in">
-            <div class="aspect-[3/4] flex flex-col items-center justify-center gap-4">
-              <div class="w-16 h-16 rounded-full border-2 border-dashed border-orion-purple/30 flex items-center justify-center group-hover:border-orion-purple/60 transition-colors">
-                <span class="material-symbols-outlined text-orion-purple/30 text-3xl group-hover:text-orion-purple/60 transition-colors">add_photo_alternate</span>
+          <!-- SLOT: Novo post -->
+          <div class="group flex rounded-2xl overflow-hidden border-2 border-dashed border-orion-purple/20 fade-in">
+            <div class="w-[45%] shrink-0 flex items-center justify-center bg-orion-purple/3">
+              <div class="aspect-[3/4] w-full flex items-center justify-center">
+                <div class="w-12 h-12 rounded-full border-2 border-dashed border-orion-purple/25 flex items-center justify-center group-hover:border-orion-purple/50 transition-colors">
+                  <span class="material-symbols-outlined text-orion-purple/25 text-xl group-hover:text-orion-purple/50 transition-colors">add_photo_alternate</span>
+                </div>
               </div>
-              <div class="text-center">
-                <p class="text-muted-gray/40 text-sm font-label-bold uppercase tracking-wider">Novo post</p>
-                <p class="text-muted-gray/30 text-xs mt-1">assets/images/posts/</p>
-              </div>
+            </div>
+            <div class="flex-1 p-5 flex flex-col justify-center gap-1 border-l-2 border-dashed border-orion-purple/15">
+              <p class="text-muted-gray/40 text-sm font-label-bold uppercase tracking-wider">Novo post</p>
+              <p class="text-muted-gray/30 text-xs">assets/images/posts/</p>
             </div>
           </div>
 
@@ -116,66 +170,120 @@
       </div>
 
       <!-- =====================================================
-           GRID DE REELS (proporção 9:16)
+           FEED DE REELS (proporção 9:16)
            COMO ADICIONAR UM REEL:
            1. Suba o vídeo no YouTube como "Não listado"
-           2. Pegue o ID do vídeo (ex: ?v=ABC123 → ID = ABC123)
-           3. Copie um card abaixo
-           4. Atualize data-src com: https://www.youtube.com/embed/ID_DO_VIDEO
-           5. Atualize data-title e data-date
-           6. Substitua o placeholder pelo thumbnail real
+           2. Pegue o ID: youtube.com/watch?v=ABC123 → ID = ABC123
+           3. data-src="https://www.youtube.com/embed/ID_DO_VIDEO"
+           4. Atualize: data-title, data-date, data-desc, data-tags
+           5. Substitua o gradiente por: <img src="thumbnail.jpg" class="w-full h-full object-cover">
       ====================================================== -->
       <div id="grid-reels" style="display:none;">
-        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
 
-          <!-- REEL: Placeholder 1 -->
-          <div class="post-card group relative rounded-2xl overflow-hidden cursor-pointer fade-in"
-               data-src="" data-title="Dica de Marketing" data-date="Maio 2025" data-type="reel" data-video="true">
-            <div class="aspect-[9/16] bg-gradient-to-b from-[#1a0050] via-orion-purple to-[#3A00A0] flex flex-col items-center justify-center relative select-none">
-              <div class="w-16 h-16 bg-white/15 backdrop-blur-sm rounded-full flex items-center justify-center mb-3 border border-white/20">
-                <span class="material-symbols-outlined text-white text-3xl ml-1" style="font-variation-settings:'FILL' 1,'wght' 400">play_arrow</span>
+          <!-- REEL: Dica de Marketing -->
+          <div class="post-card group flex rounded-2xl overflow-hidden bg-stark-white border border-outline-variant/20 shadow-sm hover:shadow-xl hover:border-orion-purple/25 transition-all duration-300 cursor-pointer"
+               data-src=""
+               data-title="Dica de Marketing"
+               data-date="Maio 2025"
+               data-desc="Você sabia que 80% das vendas online acontecem depois do 5º contato? Veja nossas dicas para converter mais. 🚀"
+               data-tags="#marketingdigital #dicas #trafegopago #agenciaorion"
+               data-type="reel"
+               data-video="true">
+
+            <!-- Mídia: 35% do card, proporção 9:16 -->
+            <div class="relative w-[35%] shrink-0 overflow-hidden bg-gradient-to-b from-[#1a0050] via-orion-purple to-[#3A00A0] select-none">
+              <div class="aspect-[9/16] h-full w-full flex items-center justify-center">
+                <div class="w-12 h-12 bg-white/15 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/20">
+                  <span class="material-symbols-outlined text-white text-2xl ml-0.5" style="font-variation-settings:'FILL' 1,'wght' 400">play_arrow</span>
+                </div>
               </div>
-              <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/70 to-transparent">
-                <p class="text-white font-label-bold text-sm">Dica de Marketing</p>
-                <p class="text-white/50 text-xs mt-0.5">Reel · Maio 2025</p>
-              </div>
-              <div class="absolute inset-0 bg-deep-slate/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <div class="w-14 h-14 bg-orion-purple rounded-full flex items-center justify-center shadow-lg">
-                  <span class="material-symbols-outlined text-white text-2xl ml-1" style="font-variation-settings:'FILL' 1,'wght' 400">play_arrow</span>
+              <div class="absolute inset-0 bg-deep-slate/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <div class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/30">
+                  <span class="material-symbols-outlined text-white text-2xl ml-0.5" style="font-variation-settings:'FILL' 1,'wght' 400">play_arrow</span>
                 </div>
               </div>
             </div>
+
+            <div class="flex-1 min-w-0 p-5 flex flex-col justify-between border-l border-outline-variant/15">
+              <div>
+                <div class="flex items-center gap-2 mb-3">
+                  <span class="inline-flex items-center gap-1 text-xs font-label-bold uppercase tracking-wider text-orion-purple bg-orion-purple/10 px-2.5 py-1 rounded-full">
+                    <span class="material-symbols-outlined text-xs" style="font-variation-settings:'FILL' 1,'wght' 400">play_circle</span>
+                    Reel
+                  </span>
+                </div>
+                <p class="font-label-bold text-deep-slate text-base leading-snug mb-1">Dica de Marketing</p>
+                <p class="text-muted-gray text-xs mb-4">Maio 2025</p>
+                <p class="text-muted-gray text-sm leading-relaxed">
+                  Você sabia que 80% das vendas online acontecem depois do 5º contato? Veja nossas dicas para converter mais. 🚀
+                </p>
+              </div>
+              <div class="flex items-center gap-1.5 text-orion-purple mt-5 pt-4 border-t border-outline-variant/15">
+                <span class="text-xs font-label-bold uppercase tracking-wider">Assistir</span>
+                <span class="material-symbols-outlined text-sm">play_circle</span>
+              </div>
+            </div>
+
           </div>
 
-          <!-- REEL: Placeholder 2 -->
-          <div class="post-card group relative rounded-2xl overflow-hidden cursor-pointer fade-in"
-               data-src="" data-title="Bastidores" data-date="Maio 2025" data-type="reel" data-video="true">
-            <div class="aspect-[9/16] bg-gradient-to-b from-orion-purple via-[#4900BE] to-[#1a0050] flex flex-col items-center justify-center relative select-none">
-              <div class="w-16 h-16 bg-white/15 backdrop-blur-sm rounded-full flex items-center justify-center mb-3 border border-white/20">
-                <span class="material-symbols-outlined text-white text-3xl ml-1" style="font-variation-settings:'FILL' 1,'wght' 400">play_arrow</span>
+          <!-- REEL: Bastidores -->
+          <div class="post-card group flex rounded-2xl overflow-hidden bg-stark-white border border-outline-variant/20 shadow-sm hover:shadow-xl hover:border-orion-purple/25 transition-all duration-300 cursor-pointer"
+               data-src=""
+               data-title="Bastidores"
+               data-date="Maio 2025"
+               data-desc="Um dia aqui na Orion: planejamento, criação, análise e muita estratégia. Vem ver como funciona por dentro! 🎬"
+               data-tags="#bastidores #agenciaorion #marketingdigital #agencia"
+               data-type="reel"
+               data-video="true">
+
+            <div class="relative w-[35%] shrink-0 overflow-hidden bg-gradient-to-b from-orion-purple via-[#4900BE] to-[#1a0050] select-none">
+              <div class="aspect-[9/16] h-full w-full flex items-center justify-center">
+                <div class="w-12 h-12 bg-white/15 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/20">
+                  <span class="material-symbols-outlined text-white text-2xl ml-0.5" style="font-variation-settings:'FILL' 1,'wght' 400">play_arrow</span>
+                </div>
               </div>
-              <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/70 to-transparent">
-                <p class="text-white font-label-bold text-sm">Bastidores</p>
-                <p class="text-white/50 text-xs mt-0.5">Reel · Maio 2025</p>
-              </div>
-              <div class="absolute inset-0 bg-deep-slate/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <div class="w-14 h-14 bg-orion-purple rounded-full flex items-center justify-center shadow-lg">
-                  <span class="material-symbols-outlined text-white text-2xl ml-1" style="font-variation-settings:'FILL' 1,'wght' 400">play_arrow</span>
+              <div class="absolute inset-0 bg-deep-slate/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <div class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/30">
+                  <span class="material-symbols-outlined text-white text-2xl ml-0.5" style="font-variation-settings:'FILL' 1,'wght' 400">play_arrow</span>
                 </div>
               </div>
             </div>
+
+            <div class="flex-1 min-w-0 p-5 flex flex-col justify-between border-l border-outline-variant/15">
+              <div>
+                <div class="flex items-center gap-2 mb-3">
+                  <span class="inline-flex items-center gap-1 text-xs font-label-bold uppercase tracking-wider text-orion-purple bg-orion-purple/10 px-2.5 py-1 rounded-full">
+                    <span class="material-symbols-outlined text-xs" style="font-variation-settings:'FILL' 1,'wght' 400">play_circle</span>
+                    Reel
+                  </span>
+                </div>
+                <p class="font-label-bold text-deep-slate text-base leading-snug mb-1">Bastidores</p>
+                <p class="text-muted-gray text-xs mb-4">Maio 2025</p>
+                <p class="text-muted-gray text-sm leading-relaxed">
+                  Um dia aqui na Orion: planejamento, criação, análise e muita estratégia. Vem ver como funciona por dentro! 🎬
+                </p>
+              </div>
+              <div class="flex items-center gap-1.5 text-orion-purple mt-5 pt-4 border-t border-outline-variant/15">
+                <span class="text-xs font-label-bold uppercase tracking-wider">Assistir</span>
+                <span class="material-symbols-outlined text-sm">play_circle</span>
+              </div>
+            </div>
+
           </div>
 
-          <!-- SLOT: Adicionar novo reel -->
-          <div class="group relative rounded-2xl overflow-hidden border-2 border-dashed border-orion-purple/25 fade-in">
-            <div class="aspect-[9/16] flex flex-col items-center justify-center gap-4">
-              <div class="w-16 h-16 rounded-full border-2 border-dashed border-orion-purple/30 flex items-center justify-center group-hover:border-orion-purple/60 transition-colors">
-                <span class="material-symbols-outlined text-orion-purple/30 text-3xl group-hover:text-orion-purple/60 transition-colors">video_call</span>
+          <!-- SLOT: Novo reel -->
+          <div class="group flex rounded-2xl overflow-hidden border-2 border-dashed border-orion-purple/20 fade-in">
+            <div class="w-[35%] shrink-0 flex items-center justify-center bg-orion-purple/3">
+              <div class="aspect-[9/16] w-full flex items-center justify-center">
+                <div class="w-12 h-12 rounded-full border-2 border-dashed border-orion-purple/25 flex items-center justify-center group-hover:border-orion-purple/50 transition-colors">
+                  <span class="material-symbols-outlined text-orion-purple/25 text-xl group-hover:text-orion-purple/50 transition-colors">video_call</span>
+                </div>
               </div>
-              <div class="text-center px-3">
-                <p class="text-muted-gray/40 text-sm font-label-bold uppercase tracking-wider">Novo reel</p>
-                <p class="text-muted-gray/30 text-xs mt-1">YouTube não listado</p>
-              </div>
+            </div>
+            <div class="flex-1 p-5 flex flex-col justify-center gap-1 border-l-2 border-dashed border-orion-purple/15">
+              <p class="text-muted-gray/40 text-sm font-label-bold uppercase tracking-wider">Novo reel</p>
+              <p class="text-muted-gray/30 text-xs">YouTube não listado</p>
             </div>
           </div>
 
@@ -185,25 +293,90 @@
     </div>
   </section>
 
-  <!-- MODAL LIGHTBOX -->
-  <div id="post-modal" class="hidden fixed inset-0 z-[500] bg-deep-slate/95 backdrop-blur-sm flex items-center justify-center p-4">
+  <!-- ============================================================
+       MODAL INSTAGRAM-STYLE
+       Mídia à esquerda · Painel de info à direita
+       Mobile: empilhado (mídia em cima, info embaixo)
+  ============================================================ -->
+  <div id="post-modal" class="hidden fixed inset-0 z-[500] bg-black/92 backdrop-blur-sm flex items-center justify-center">
 
-    <!-- Fechar -->
-    <button id="modal-close"
-      class="absolute top-5 right-5 w-11 h-11 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-white/20 transition-all z-10">
-      <span class="material-symbols-outlined text-2xl">close</span>
+    <!-- Overlay: fechar ao clicar fora -->
+    <div id="modal-overlay" class="absolute inset-0"></div>
+
+    <!-- Seta anterior (desktop) -->
+    <button id="modal-prev" class="hidden absolute left-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 bg-white/15 backdrop-blur-sm rounded-full items-center justify-center text-white hover:bg-white/30 transition-all">
+      <span class="material-symbols-outlined">chevron_left</span>
     </button>
 
-    <!-- Conteúdo -->
-    <div id="modal-content" class="flex items-center justify-center"></div>
+    <!-- Seta próxima (desktop) -->
+    <button id="modal-next" class="hidden absolute right-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 bg-white/15 backdrop-blur-sm rounded-full items-center justify-center text-white hover:bg-white/30 transition-all">
+      <span class="material-symbols-outlined">chevron_right</span>
+    </button>
 
-    <!-- Info -->
-    <div class="absolute bottom-6 left-0 right-0 text-center pointer-events-none">
-      <p id="modal-title" class="text-white font-label-bold text-sm uppercase tracking-wider"></p>
-      <p id="modal-date"  class="text-white/40 text-xs mt-1"></p>
-    </div>
+    <!-- Container do modal -->
+    <div class="relative flex flex-col md:flex-row w-full h-full md:h-auto md:max-w-4xl md:max-h-[90vh] md:rounded-2xl overflow-hidden shadow-2xl z-10">
 
-  </div>
+      <!-- MÍDIA (preto, flex-1 desktop | 55vh mobile) -->
+      <div id="modal-media-wrap"
+           class="bg-black flex items-center justify-center overflow-hidden shrink-0
+                  h-[55vw] max-h-[55vh]
+                  md:h-auto md:max-h-none md:flex-1">
+      </div>
+
+      <!-- PAINEL INFO -->
+      <div class="flex flex-col bg-white md:w-[340px] md:shrink-0 flex-1 md:flex-none overflow-hidden">
+
+        <!-- Header: perfil + fechar -->
+        <div class="flex items-center gap-3 px-4 py-3 border-b border-gray-100 shrink-0">
+          <div class="w-8 h-8 rounded-full overflow-hidden border border-orion-purple/20 shrink-0">
+            <img src="assets/images/logo.jpg" alt="Agência Orion" class="w-full h-full object-cover">
+          </div>
+          <div class="flex-1 min-w-0">
+            <p class="font-label-bold text-deep-slate text-sm leading-tight">Agência Orion</p>
+            <p class="text-muted-gray text-xs">@_agencia.orion</p>
+          </div>
+          <button id="modal-close"
+                  class="w-9 h-9 flex items-center justify-center text-muted-gray hover:text-deep-slate hover:bg-gray-100 rounded-full transition-all shrink-0">
+            <span class="material-symbols-outlined text-xl">close</span>
+          </button>
+        </div>
+
+        <!-- Legenda + data (scrollável) -->
+        <div class="flex-1 overflow-y-auto p-4">
+          <div class="flex gap-3">
+            <div class="w-8 h-8 rounded-full overflow-hidden border border-orion-purple/20 shrink-0 mt-0.5">
+              <img src="assets/images/logo.jpg" alt="Agência Orion" class="w-full h-full object-cover">
+            </div>
+            <div class="min-w-0">
+              <p class="text-sm text-deep-slate leading-relaxed">
+                <span class="font-label-bold">agenciaorion</span>
+                <span id="modal-caption" class="ml-1 text-deep-slate/80"></span>
+              </p>
+              <p id="modal-tags" class="text-orion-purple text-xs mt-2 leading-loose"></p>
+              <p id="modal-date" class="text-muted-gray text-xs mt-3"></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Rodapé: ações -->
+        <div class="shrink-0 border-t border-gray-100 px-4 pt-3 pb-4">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="material-symbols-outlined text-[26px] text-deep-slate cursor-pointer select-none hover:text-red-400 transition-colors">favorite_border</span>
+            <span class="material-symbols-outlined text-[26px] text-deep-slate cursor-pointer select-none hover:text-orion-purple transition-colors">chat_bubble_outline</span>
+            <a href="https://instagram.com/_agencia.orion" target="_blank"
+               class="ml-auto flex items-center gap-1.5 text-xs text-muted-gray hover:text-orion-purple transition-colors font-label-bold uppercase tracking-wide">
+              <span class="material-symbols-outlined text-sm">open_in_new</span>
+              Ver no Instagram
+            </a>
+          </div>
+          <p id="modal-title" class="font-label-bold text-deep-slate text-sm"></p>
+        </div>
+
+      </div><!-- /painel info -->
+
+    </div><!-- /container do modal -->
+
+  </div><!-- /post-modal -->
 
   <div id="footer"></div>
   <div id="whatsapp-fab"></div>
@@ -212,69 +385,121 @@
   <script src="assets/js/main.js"></script>
 
   <script>
-    // TAB SWITCHER
+    /* ─── TABS ─────────────────────────────────────────────── */
     function switchTab(tab) {
       const postsGrid = document.getElementById('grid-posts');
       const reelsGrid = document.getElementById('grid-reels');
       const tabPosts  = document.getElementById('tab-posts');
       const tabReels  = document.getElementById('tab-reels');
 
-      const activeClass   = 'flex items-center gap-2 px-6 py-3 rounded-xl font-label-bold text-sm uppercase tracking-wider bg-orion-purple text-stark-white shadow-[0_4px_20px_rgba(98,27,238,0.3)] transition-all';
-      const inactiveClass = 'flex items-center gap-2 px-6 py-3 rounded-xl font-label-bold text-sm uppercase tracking-wider border-2 border-orion-purple text-orion-purple hover:bg-orion-purple/5 transition-all';
+      const active   = 'flex items-center gap-2 px-6 py-3 rounded-xl font-label-bold text-sm uppercase tracking-wider bg-orion-purple text-stark-white shadow-[0_4px_20px_rgba(98,27,238,0.3)] transition-all';
+      const inactive = 'flex items-center gap-2 px-6 py-3 rounded-xl font-label-bold text-sm uppercase tracking-wider border-2 border-orion-purple text-orion-purple hover:bg-orion-purple/5 transition-all';
 
       if (tab === 'posts') {
         postsGrid.style.display = 'block';
         reelsGrid.style.display = 'none';
-        tabPosts.className = activeClass;
-        tabReels.className = inactiveClass;
+        tabPosts.className = active;
+        tabReels.className = inactive;
       } else {
         postsGrid.style.display = 'none';
         reelsGrid.style.display = 'block';
-        tabReels.className = activeClass;
-        tabPosts.className = inactiveClass;
+        tabReels.className = active;
+        tabPosts.className = inactive;
       }
     }
 
-    // MODAL
-    document.querySelectorAll('.post-card').forEach(card => {
-      card.addEventListener('click', () => {
-        const src     = card.dataset.src;
-        const title   = card.dataset.title;
-        const date    = card.dataset.date;
-        const isVideo = card.dataset.video === 'true';
+    /* ─── MODAL STATE ──────────────────────────────────────── */
+    let modalCards = [];
+    let modalIndex = 0;
 
-        if (!src) return;
+    function getActiveCards() {
+      const isPostsVisible = document.getElementById('grid-posts').style.display !== 'none';
+      const gridId = isPostsVisible ? 'grid-posts' : 'grid-reels';
+      return Array.from(
+        document.querySelectorAll(`#${gridId} .post-card`)
+      ).filter(c => c.dataset.src);
+    }
 
-        const modal   = document.getElementById('post-modal');
-        const content = document.getElementById('modal-content');
+    function renderModal() {
+      const card    = modalCards[modalIndex];
+      const src     = card.dataset.src;
+      const title   = card.dataset.title || '';
+      const date    = card.dataset.date  || '';
+      const desc    = card.dataset.desc  || '';
+      const tags    = card.dataset.tags  || '';
+      const isVideo = card.dataset.video === 'true';
 
-        if (isVideo) {
-          content.innerHTML = `<iframe src="${src}?autoplay=1" class="rounded-2xl shadow-2xl" style="width:min(380px,85vw);aspect-ratio:9/16;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>`;
-        } else {
-          content.innerHTML = `<img src="${src}" alt="${title}" class="rounded-2xl shadow-2xl" style="max-height:85vh;max-width:90vw;object-fit:contain;">`;
-        }
+      const wrap = document.getElementById('modal-media-wrap');
 
-        document.getElementById('modal-title').textContent = title;
-        document.getElementById('modal-date').textContent  = date;
-        modal.classList.remove('hidden');
-        document.body.style.overflow = 'hidden';
-      });
-    });
+      if (isVideo) {
+        /* Reel: iframe 9:16 centralizado na área preta */
+        wrap.innerHTML = `
+          <div class="flex items-center justify-center w-full h-full">
+            <div style="aspect-ratio:9/16;max-height:90vh;width:auto;max-width:100%;">
+              <iframe
+                src="${src}?autoplay=1&rel=0&modestbranding=1"
+                class="w-full h-full"
+                frameborder="0"
+                allow="autoplay; fullscreen; picture-in-picture"
+                allowfullscreen>
+              </iframe>
+            </div>
+          </div>`;
+      } else {
+        /* Post: imagem object-contain */
+        wrap.innerHTML = `<img src="${src}" alt="${title}" class="max-h-full max-w-full object-contain">`;
+      }
+
+      document.getElementById('modal-caption').textContent = desc;
+      document.getElementById('modal-tags').textContent    = tags;
+      document.getElementById('modal-title').textContent   = title;
+      document.getElementById('modal-date').textContent    = date;
+
+      /* Setas de navegação */
+      const prev = document.getElementById('modal-prev');
+      const next = document.getElementById('modal-next');
+      prev.style.display = modalIndex > 0                        ? 'flex' : 'none';
+      next.style.display = modalIndex < modalCards.length - 1   ? 'flex' : 'none';
+    }
+
+    function openModal(card) {
+      modalCards = getActiveCards();
+      modalIndex = modalCards.indexOf(card);
+      if (modalIndex === -1 || !card.dataset.src) return;
+      renderModal();
+      document.getElementById('post-modal').classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
 
     function closeModal() {
-      const modal   = document.getElementById('post-modal');
-      const content = document.getElementById('modal-content');
-      content.innerHTML = '';
-      modal.classList.add('hidden');
+      document.getElementById('post-modal').classList.add('hidden');
+      document.getElementById('modal-media-wrap').innerHTML = '';
       document.body.style.overflow = '';
     }
 
-    document.getElementById('modal-close').addEventListener('click', closeModal);
-    document.getElementById('post-modal').addEventListener('click', e => {
-      if (e.target === e.currentTarget) closeModal();
+    function navModal(dir) {
+      const newIdx = modalIndex + dir;
+      if (newIdx < 0 || newIdx >= modalCards.length) return;
+      document.getElementById('modal-media-wrap').innerHTML = '';
+      modalIndex = newIdx;
+      renderModal();
+    }
+
+    /* ─── EVENTOS ──────────────────────────────────────────── */
+    document.querySelectorAll('.post-card').forEach(card => {
+      card.addEventListener('click', () => openModal(card));
     });
+
+    document.getElementById('modal-close').addEventListener('click', closeModal);
+    document.getElementById('modal-overlay').addEventListener('click', closeModal);
+    document.getElementById('modal-prev').addEventListener('click', () => navModal(-1));
+    document.getElementById('modal-next').addEventListener('click', () => navModal(1));
+
     document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') closeModal();
+      if (document.getElementById('post-modal').classList.contains('hidden')) return;
+      if (e.key === 'Escape')      closeModal();
+      if (e.key === 'ArrowLeft')   navModal(-1);
+      if (e.key === 'ArrowRight')  navModal(1);
     });
   </script>
 
