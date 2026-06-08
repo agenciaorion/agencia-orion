@@ -194,6 +194,17 @@ html {
 /* --- Garante que o hero nunca fique invisível --- */
 header > div > div { opacity: 1 !important; transform: none !important; }
 
+/* --- Faixa de serviços: marquee infinito --- */
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 28s linear infinite;
+}
+
 /* --- Botão CTA menu mobile: gradiente animado interno --- */
 .cta-gradient {
   background: linear-gradient(90deg, #621BEE, #8B45F0, #4F0DCC, #621BEE);
