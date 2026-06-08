@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Posts & Reels | Agência Orion — Conteúdo</title>
+  <link rel="icon" type="image/jpeg" href="assets/images/logo.jpg">
+  <meta name="description" content="Posts e Reels da Agência Orion. Datas comemorativas, dicas de marketing e bastidores da agência.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.agenciaorionce.com.br/posts.html">
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script src="assets/js/tailwind.config.js"></script>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap">
+</head>
+
+<body class="bg-background text-on-background overflow-x-hidden font-body-md">
+
+  <div id="navbar"></div>
+
+  <!-- HERO -->
+  <header class="pt-6 pb-12 md:pt-20 md:pb-16 px-margin-mobile md:px-margin-desktop bg-surface-container-low kinetic-bg">
+    <div class="max-w-container-max mx-auto w-full fade-in">
+      <div class="flex items-center gap-2 mb-4">
+        <span class="orion-dot"></span>
+        <span class="font-label-bold text-primary tracking-widest uppercase text-sm">Conteúdo</span>
+      </div>
+      <h1 class="font-display-lg text-[48px] md:text-[64px] text-deep-slate mb-6 leading-[1.1]">
+        Nossos <span class="text-orion-purple">Posts</span> & Reels
+      </h1>
+      <p class="font-body-lg text-body-lg text-muted-gray max-w-xl">
+        Datas comemorativas, dicas de marketing e bastidores da agência. Conteúdo produzido com identidade e estratégia.
+      </p>
+    </div>
+  </header>
+
+  <!-- TABS + GRID -->
+  <section class="py-16 px-margin-mobile md:px-margin-desktop">
+    <div class="max-w-container-max mx-auto">
+
+      <!-- Abas -->
+      <div class="flex gap-3 mb-10">
+        <button id="tab-posts" onclick="switchTab('posts')"
+          class="flex items-center gap-2 px-6 py-3 rounded-xl font-label-bold text-sm uppercase tracking-wider bg-orion-purple text-stark-white shadow-[0_4px_20px_rgba(98,27,238,0.3)] transition-all">
+          <span class="material-symbols-outlined text-base" style="font-variation-settings:'FILL' 1,'wght' 400">grid_on</span>
+          Posts
+        </button>
+        <button id="tab-reels" onclick="switchTab('reels')"
+          class="flex items-center gap-2 px-6 py-3 rounded-xl font-label-bold text-sm uppercase tracking-wider border-2 border-orion-purple text-orion-purple hover:bg-orion-purple/5 transition-all">
+          <span class="material-symbols-outlined text-base">play_circle</span>
+          Reels
+        </button>
+      </div>
+
+      <!-- =====================================================
+           GRID DE POSTS (proporção 3:4)
+           COMO ADICIONAR UM POST:
+           1. Baixe a imagem do Instagram
+           2. Coloque em: assets/images/posts/nome-do-arquivo.jpg
+           3. Copie um card abaixo
+           4. Atualize data-src, data-title e data-date
+           5. Substitua o conteúdo placeholder por <img src="..." ...>
+      ====================================================== -->
+      <div id="grid-posts">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+
+          <!-- POST: Dia do Trabalhador -->
+          <div class="post-card group relative rounded-2xl overflow-hidden cursor-pointer fade-in"
+               data-src="" data-title="Dia do Trabalhador" data-date="01 de Maio, 2025" data-type="post">
+            <div class="aspect-[3/4] bg-gradient-to-br from-orion-purple to-[#3A00A0] flex flex-col items-center justify-center relative select-none">
+              <span class="material-symbols-outlined text-white/15 text-[96px]" style="font-variation-settings:'FILL' 1,'wght' 400">work</span>
+              <div class="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-black/60 to-transparent">
+                <p class="text-white font-label-bold text-base">Dia do Trabalhador</p>
+                <p class="text-white/60 text-xs mt-0.5">01 de Maio, 2025</p>
+              </div>
+              <div class="absolute inset-0 bg-deep-slate/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <div class="w-14 h-14 bg-orion-purple rounded-full flex items-center justify-center shadow-lg">
+                  <span class="material-symbols-outlined text-white text-2xl">zoom_in</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- POST: Dia das Mães -->
+          <div class="post-card group relative rounded-2xl overflow-hidden cursor-pointer fade-in"
+               data-src="" data-title="Dia das Mães" data-date="11 de Maio, 2025" data-type="post">
+            <div class="aspect-[3/4] bg-gradient-to-br from-[#8B45F0] to-orion-purple flex flex-col items-center justify-center relative select-none">
+              <span class="material-symbols-outlined text-white/15 text-[96px]" style="font-variation-settings:'FILL' 1,'wght' 400">favorite</span>
+              <div class="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-black/60 to-transparent">
+                <p class="text-white font-label-bold text-base">Dia das Mães</p>
+                <p class="text-white/60 text-xs mt-0.5">11 de Maio, 2025</p>
+              </div>
+              <div class="absolute inset-0 bg-deep-slate/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <div class="w-14 h-14 bg-orion-purple rounded-full flex items-center justify-center shadow-lg">
+                  <span class="material-symbols-outlined text-white text-2xl">zoom_in</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SLOT: Adicionar novo post -->
+          <div class="group relative rounded-2xl overflow-hidden border-2 border-dashed border-orion-purple/25 fade-in">
+            <div class="aspect-[3/4] flex flex-col items-center justify-center gap-4">
+              <div class="w-16 h-16 rounded-full border-2 border-dashed border-orion-purple/30 flex items-center justify-center group-hover:border-orion-purple/60 transition-colors">
+                <span class="material-symbols-outlined text-orion-purple/30 text-3xl group-hover:text-orion-purple/60 transition-colors">add_photo_alternate</span>
+              </div>
+              <div class="text-center">
+                <p class="text-muted-gray/40 text-sm font-label-bold uppercase tracking-wider">Novo post</p>
+                <p class="text-muted-gray/30 text-xs mt-1">assets/images/posts/</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- =====================================================
+           GRID DE REELS (proporção 9:16)
+           COMO ADICIONAR UM REEL:
+           1. Suba o vídeo no YouTube como "Não listado"
+           2. Pegue o ID do vídeo (ex: ?v=ABC123 → ID = ABC123)
+           3. Copie um card abaixo
+           4. Atualize data-src com: https://www.youtube.com/embed/ID_DO_VIDEO
+           5. Atualize data-title e data-date
+           6. Substitua o placeholder pelo thumbnail real
+      ====================================================== -->
+      <div id="grid-reels" style="display:none;">
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+
+          <!-- REEL: Placeholder 1 -->
+          <div class="post-card group relative rounded-2xl overflow-hidden cursor-pointer fade-in"
+               data-src="" data-title="Dica de Marketing" data-date="Maio 2025" data-type="reel" data-video="true">
+            <div class="aspect-[9/16] bg-gradient-to-b from-[#1a0050] via-orion-purple to-[#3A00A0] flex flex-col items-center justify-center relative select-none">
+              <div class="w-16 h-16 bg-white/15 backdrop-blur-sm rounded-full flex items-center justify-center mb-3 border border-white/20">
+                <span class="material-symbols-outlined text-white text-3xl ml-1" style="font-variation-settings:'FILL' 1,'wght' 400">play_arrow</span>
+              </div>
+              <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/70 to-transparent">
+                <p class="text-white font-label-bold text-sm">Dica de Marketing</p>
+                <p class="text-white/50 text-xs mt-0.5">Reel · Maio 2025</p>
+              </div>
+              <div class="absolute inset-0 bg-deep-slate/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <div class="w-14 h-14 bg-orion-purple rounded-full flex items-center justify-center shadow-lg">
+                  <span class="material-symbols-outlined text-white text-2xl ml-1" style="font-variation-settings:'FILL' 1,'wght' 400">play_arrow</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- REEL: Placeholder 2 -->
+          <div class="post-card group relative rounded-2xl overflow-hidden cursor-pointer fade-in"
+               data-src="" data-title="Bastidores" data-date="Maio 2025" data-type="reel" data-video="true">
+            <div class="aspect-[9/16] bg-gradient-to-b from-orion-purple via-[#4900BE] to-[#1a0050] flex flex-col items-center justify-center relative select-none">
+              <div class="w-16 h-16 bg-white/15 backdrop-blur-sm rounded-full flex items-center justify-center mb-3 border border-white/20">
+                <span class="material-symbols-outlined text-white text-3xl ml-1" style="font-variation-settings:'FILL' 1,'wght' 400">play_arrow</span>
+              </div>
+              <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/70 to-transparent">
+                <p class="text-white font-label-bold text-sm">Bastidores</p>
+                <p class="text-white/50 text-xs mt-0.5">Reel · Maio 2025</p>
+              </div>
+              <div class="absolute inset-0 bg-deep-slate/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <div class="w-14 h-14 bg-orion-purple rounded-full flex items-center justify-center shadow-lg">
+                  <span class="material-symbols-outlined text-white text-2xl ml-1" style="font-variation-settings:'FILL' 1,'wght' 400">play_arrow</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SLOT: Adicionar novo reel -->
+          <div class="group relative rounded-2xl overflow-hidden border-2 border-dashed border-orion-purple/25 fade-in">
+            <div class="aspect-[9/16] flex flex-col items-center justify-center gap-4">
+              <div class="w-16 h-16 rounded-full border-2 border-dashed border-orion-purple/30 flex items-center justify-center group-hover:border-orion-purple/60 transition-colors">
+                <span class="material-symbols-outlined text-orion-purple/30 text-3xl group-hover:text-orion-purple/60 transition-colors">video_call</span>
+              </div>
+              <div class="text-center px-3">
+                <p class="text-muted-gray/40 text-sm font-label-bold uppercase tracking-wider">Novo reel</p>
+                <p class="text-muted-gray/30 text-xs mt-1">YouTube não listado</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- MODAL LIGHTBOX -->
+  <div id="post-modal" class="hidden fixed inset-0 z-[500] bg-deep-slate/95 backdrop-blur-sm flex items-center justify-center p-4">
+
+    <!-- Fechar -->
+    <button id="modal-close"
+      class="absolute top-5 right-5 w-11 h-11 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-white/20 transition-all z-10">
+      <span class="material-symbols-outlined text-2xl">close</span>
+    </button>
+
+    <!-- Conteúdo -->
+    <div id="modal-content" class="flex items-center justify-center"></div>
+
+    <!-- Info -->
+    <div class="absolute bottom-6 left-0 right-0 text-center pointer-events-none">
+      <p id="modal-title" class="text-white font-label-bold text-sm uppercase tracking-wider"></p>
+      <p id="modal-date"  class="text-white/40 text-xs mt-1"></p>
+    </div>
+
+  </div>
+
+  <div id="footer"></div>
+  <div id="whatsapp-fab"></div>
+
+  <script src="assets/js/components.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    // TAB SWITCHER
+    function switchTab(tab) {
+      const postsGrid = document.getElementById('grid-posts');
+      const reelsGrid = document.getElementById('grid-reels');
+      const tabPosts  = document.getElementById('tab-posts');
+      const tabReels  = document.getElementById('tab-reels');
+
+      const activeClass   = 'flex items-center gap-2 px-6 py-3 rounded-xl font-label-bold text-sm uppercase tracking-wider bg-orion-purple text-stark-white shadow-[0_4px_20px_rgba(98,27,238,0.3)] transition-all';
+      const inactiveClass = 'flex items-center gap-2 px-6 py-3 rounded-xl font-label-bold text-sm uppercase tracking-wider border-2 border-orion-purple text-orion-purple hover:bg-orion-purple/5 transition-all';
+
+      if (tab === 'posts') {
+        postsGrid.style.display = 'block';
+        reelsGrid.style.display = 'none';
+        tabPosts.className = activeClass;
+        tabReels.className = inactiveClass;
+      } else {
+        postsGrid.style.display = 'none';
+        reelsGrid.style.display = 'block';
+        tabReels.className = activeClass;
+        tabPosts.className = inactiveClass;
+      }
+    }
+
+    // MODAL
+    document.querySelectorAll('.post-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const src     = card.dataset.src;
+        const title   = card.dataset.title;
+        const date    = card.dataset.date;
+        const isVideo = card.dataset.video === 'true';
+
+        if (!src) return;
+
+        const modal   = document.getElementById('post-modal');
+        const content = document.getElementById('modal-content');
+
+        if (isVideo) {
+          content.innerHTML = `<iframe src="${src}?autoplay=1" class="rounded-2xl shadow-2xl" style="width:min(380px,85vw);aspect-ratio:9/16;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>`;
+        } else {
+          content.innerHTML = `<img src="${src}" alt="${title}" class="rounded-2xl shadow-2xl" style="max-height:85vh;max-width:90vw;object-fit:contain;">`;
+        }
+
+        document.getElementById('modal-title').textContent = title;
+        document.getElementById('modal-date').textContent  = date;
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    function closeModal() {
+      const modal   = document.getElementById('post-modal');
+      const content = document.getElementById('modal-content');
+      content.innerHTML = '';
+      modal.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    document.getElementById('modal-close').addEventListener('click', closeModal);
+    document.getElementById('post-modal').addEventListener('click', e => {
+      if (e.target === e.currentTarget) closeModal();
+    });
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeModal();
+    });
+  </script>
+
+</body>
+</html>
