@@ -19,7 +19,7 @@ function renderNavbar() {
 
   // Define qual link está ativo com base na página atual
   const links = [
-    { href: "index.html",   label: "Home" },
+    { href: "index.html",    label: "Home" },
     { href: "servicos.html", label: "Serviços" },
     { href: "sobre.html",    label: "Sobre Nós" },
     { href: "contato.html",  label: "Contato" },
@@ -187,6 +187,7 @@ function renderFooter() {
           <ul class="space-y-4">
             <li><a href="index.html"    class="text-muted-gray hover:text-orion-purple transition-colors">Home</a></li>
             <li><a href="servicos.html" class="text-muted-gray hover:text-orion-purple transition-colors">Serviços</a></li>
+            <li><a href="posts.html"    class="text-muted-gray hover:text-orion-purple transition-colors">Posts</a></li>
             <li><a href="sobre.html"    class="text-muted-gray hover:text-orion-purple transition-colors">Sobre Nós</a></li>
             <li><a href="contato.html"  class="text-muted-gray hover:text-orion-purple transition-colors">Contato</a></li>
           </ul>
