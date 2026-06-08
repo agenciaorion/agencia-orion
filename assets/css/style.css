@@ -201,7 +201,9 @@ header > div > div { opacity: 1 !important; transform: none !important; }
 }
 .marquee-track {
   display: flex;
+  flex-wrap: nowrap;
   width: max-content;
+  white-space: nowrap;
   animation: marquee 28s linear infinite;
 }
 
