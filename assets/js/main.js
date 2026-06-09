@@ -146,7 +146,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // ----------------------------------------------------------
   // PARTÍCULAS
   // ----------------------------------------------------------
-  if (window.innerWidth >= 1024) {
+  if (window.innerWidth >= 1024 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     const canvas = document.createElement("canvas");
     canvas.id = "particles-canvas";
     canvas.style.cssText = `

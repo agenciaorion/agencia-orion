@@ -101,6 +101,13 @@ html {
   color: white;
 }
 
+/* --- Focus states: navegação por teclado --- */
+:focus-visible {
+  outline: 2px solid #621BEE;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
 /* --- Foguete: animação de decolagem --- */
 @keyframes rocketLaunch {
   0%   { transform: translateY(0px);    opacity: 1; }
@@ -205,6 +212,24 @@ header > div > div { opacity: 1 !important; transform: none !important; }
   width: max-content;
   white-space: nowrap;
   animation: marquee 28s linear infinite;
+}
+
+/* --- Respeita preferência de redução de movimento do sistema --- */
+@media (prefers-reduced-motion: reduce) {
+  .fade-in {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+  .marquee-track {
+    animation: none;
+  }
+  #rocket,
+  .rocket-fly,
+  .section-rocket-fly,
+  .section-rocket-left-fly {
+    animation: none;
+  }
 }
 
 /* --- Botão CTA menu mobile: gradiente animado interno --- */

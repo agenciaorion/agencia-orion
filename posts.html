@@ -8,11 +8,16 @@
   <meta name="description" content="Posts e Reels da Agência Orion. Datas comemorativas, dicas de marketing e bastidores da agência.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://www.agenciaorionce.com.br/posts.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.agenciaorionce.com.br/posts.html">
+  <meta property="og:title" content="Posts & Reels | Agência Orion — Conteúdo">
+  <meta property="og:description" content="Posts e Reels da Agência Orion. Datas comemorativas, dicas de marketing e bastidores da agência.">
+  <meta property="og:image" content="https://www.agenciaorionce.com.br/assets/images/logo.jpg">
+  <meta property="og:locale" content="pt_BR">
 
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <script src="assets/js/tailwind.config.js"></script>
   <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap">
 </head>
 
 <body class="bg-background text-on-background overflow-x-hidden font-body-md">
@@ -341,7 +346,7 @@
        Mídia à esquerda · Painel de info à direita
        Mobile: empilhado (mídia em cima, info embaixo)
   ============================================================ -->
-  <div id="post-modal" class="hidden fixed inset-0 z-[500] bg-black/92 backdrop-blur-sm flex items-center justify-center">
+  <div id="post-modal" role="dialog" aria-modal="true" aria-label="Post da Agência Orion" class="hidden fixed inset-0 z-[500] bg-black/92 backdrop-blur-sm flex items-center justify-center">
 
     <!-- Overlay: fechar ao clicar fora -->
     <div id="modal-overlay" class="absolute inset-0"></div>
@@ -404,7 +409,7 @@
         <div class="shrink-0 border-t border-gray-100 px-4 pt-3 pb-4">
           <div class="flex items-center justify-between mb-3">
             <p id="modal-title" class="font-label-bold text-deep-slate text-sm"></p>
-            <a href="https://instagram.com/_agencia.orion" target="_blank"
+            <a href="https://instagram.com/_agencia.orion" target="_blank" rel="noopener noreferrer"
                class="flex items-center gap-1.5 text-xs text-muted-gray hover:text-orion-purple transition-colors font-label-bold uppercase tracking-wide shrink-0 ml-3">
               <span class="material-symbols-outlined text-sm">open_in_new</span>
               Ver no Instagram
