@@ -586,10 +586,7 @@
 
       document.getElementById('quote-send').addEventListener('click', function () {
         if (selected.size === 0) return;
-        var serviceLines = Array.from(selected).map(function (s) { return '• ' + s; }).join('\n');
-        var msg = 'Olá Orion!\n\nGostaria de solicitar um orçamento para os seguintes serviços:\n\n' + serviceLines + '\n\nAguardo retorno. Obrigado!';
-        var base = (window.WHATSAPP_LINK || 'https://wa.me/5588998157783');
-        window.open(base + '?text=' + encodeURIComponent(msg), '_blank');
+        window.openLeadModal({ source: 'Orçamento - Serviços', services: Array.from(selected) });
       });
     })();
   </script>

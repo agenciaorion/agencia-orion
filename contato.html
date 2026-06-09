@@ -20,6 +20,13 @@
   <script src="assets/js/tailwind.config.js"></script>
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap">
+  <style>
+    .service-chip.chip-selected {
+      background: rgba(98, 27, 238, 0.08);
+      border-color: #621BEE;
+      color: #621BEE;
+    }
+  </style>
 </head>
 
 <body class="bg-background text-on-background overflow-x-hidden font-body-md">
@@ -74,19 +81,20 @@
           </div>
 
           <div>
-            <label class="block font-label-bold text-sm text-on-surface mb-2 uppercase tracking-wider">Serviço de interesse</label>
-            <select
-              id="field-service"
-              class="w-full border border-outline-variant rounded-xl px-5 py-4 font-body-md text-on-surface bg-surface-container-low focus:outline-none focus:border-orion-purple focus:ring-2 focus:ring-orion-purple/20 transition-all"
-            >
-              <option value="">Selecione um serviço...</option>
-              <option value="trafego">Tráfego Pago</option>
-              <option value="design">Design</option>
-              <option value="social">Social Media</option>
-              <option value="audiovisual">AudioVisual</option>
-              <option value="drone">Drone</option>
-              <option value="outros">Outros / Não sei ainda</option>
-            </select>
+            <label class="block font-label-bold text-sm text-on-surface mb-3 uppercase tracking-wider">Serviços de interesse</label>
+            <div id="service-chips" class="flex flex-wrap gap-2">
+              <button type="button" data-service="Estratégia &amp; Branding" class="service-chip px-4 py-2 rounded-xl border border-outline-variant/60 text-sm font-label-bold text-on-surface bg-surface-container-low hover:border-orion-purple/50 hover:text-orion-purple transition-all">Estratégia &amp; Branding</button>
+              <button type="button" data-service="Tráfego Pago" class="service-chip px-4 py-2 rounded-xl border border-outline-variant/60 text-sm font-label-bold text-on-surface bg-surface-container-low hover:border-orion-purple/50 hover:text-orion-purple transition-all">Tráfego Pago</button>
+              <button type="button" data-service="Social Media" class="service-chip px-4 py-2 rounded-xl border border-outline-variant/60 text-sm font-label-bold text-on-surface bg-surface-container-low hover:border-orion-purple/50 hover:text-orion-purple transition-all">Social Media</button>
+              <button type="button" data-service="Design Gráfico" class="service-chip px-4 py-2 rounded-xl border border-outline-variant/60 text-sm font-label-bold text-on-surface bg-surface-container-low hover:border-orion-purple/50 hover:text-orion-purple transition-all">Design Gráfico</button>
+              <button type="button" data-service="AudioVisual" class="service-chip px-4 py-2 rounded-xl border border-outline-variant/60 text-sm font-label-bold text-on-surface bg-surface-container-low hover:border-orion-purple/50 hover:text-orion-purple transition-all">AudioVisual</button>
+              <button type="button" data-service="Drone" class="service-chip px-4 py-2 rounded-xl border border-outline-variant/60 text-sm font-label-bold text-on-surface bg-surface-container-low hover:border-orion-purple/50 hover:text-orion-purple transition-all">Drone</button>
+              <button type="button" data-service="Cobertura de Eventos" class="service-chip px-4 py-2 rounded-xl border border-outline-variant/60 text-sm font-label-bold text-on-surface bg-surface-container-low hover:border-orion-purple/50 hover:text-orion-purple transition-all">Cobertura de Eventos</button>
+              <button type="button" data-service="Influencers" class="service-chip px-4 py-2 rounded-xl border border-outline-variant/60 text-sm font-label-bold text-on-surface bg-surface-container-low hover:border-orion-purple/50 hover:text-orion-purple transition-all">Influencers</button>
+              <button type="button" data-service="Sites &amp; Apps" class="service-chip px-4 py-2 rounded-xl border border-outline-variant/60 text-sm font-label-bold text-on-surface bg-surface-container-low hover:border-orion-purple/50 hover:text-orion-purple transition-all">Sites &amp; Apps</button>
+              <button type="button" data-service="Não sei ainda" class="service-chip px-4 py-2 rounded-xl border border-outline-variant/60 text-sm font-label-bold text-on-surface bg-surface-container-low hover:border-orion-purple/50 hover:text-orion-purple transition-all">Não sei ainda</button>
+            </div>
+            <p class="text-muted-gray/60 text-xs mt-2">Selecione um ou mais serviços</p>
           </div>
 
           <div>
@@ -154,30 +162,32 @@
   <script src="assets/js/main.js"></script>
 
   <script>
-    // Pega os campos e monta a mensagem do WhatsApp automaticamente
+    // Chips de serviço — seleção múltipla
+    document.querySelectorAll('.service-chip').forEach(function (chip) {
+      chip.addEventListener('click', function () {
+        chip.classList.toggle('chip-selected');
+      });
+    });
+
+    // Monta a mensagem do WhatsApp automaticamente
     function sendToWhatsApp() {
       const name    = document.getElementById("field-name").value.trim();
       const email   = document.getElementById("field-email").value.trim();
-      const service = document.getElementById("field-service").value;
       const message = document.getElementById("field-message").value.trim();
+
+      const selectedServices = Array.from(document.querySelectorAll('.service-chip.chip-selected'))
+        .map(function (c) { return c.dataset.service; });
 
       if (!name || !message) {
         alert("Por favor, preencha pelo menos o nome e a mensagem.");
         return;
       }
 
-      const serviceLabels = {
-        trafego:      "Tráfego Pago",
-        design:       "Design",
-        social:       "Social Media",
-        audiovisual:  "AudioVisual",
-        drone:        "Drone",
-        outros:       "Outros / Ainda não sei",
-      };
+      const serviceLabel = selectedServices.length > 0
+        ? selectedServices.join(', ')
+        : "Não informado";
 
-      const serviceLabel = serviceLabels[service] || "Não informado";
-
-      const text = `Olá, Agência Orion! 👋\n\n*Nome:* ${name}\n*E-mail:* ${email || "Não informado"}\n*Serviço:* ${serviceLabel}\n\n*Mensagem:*\n${message}`;
+      const text = `Olá, Agência Orion! 👋\n\n*Nome:* ${name}\n*E-mail:* ${email || "Não informado"}\n*Serviços:* ${serviceLabel}\n\n*Mensagem:*\n${message}`;
 
       const encoded = encodeURIComponent(text);
       window.open(`${window.WHATSAPP_LINK}?text=${encoded}`, "_blank");

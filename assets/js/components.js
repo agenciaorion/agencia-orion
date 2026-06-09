@@ -11,6 +11,12 @@ const WHATSAPP_LINK   = `https://wa.me/${WHATSAPP_NUMBER}`;
 // Expõe o link globalmente para páginas que precisam usar fora do components.js
 window.WHATSAPP_LINK = WHATSAPP_LINK;
 
+// --- EmailJS — preencha após criar conta em emailjs.com ---
+const EMAILJS_PUBLIC_KEY      = 'kOhEeM8EuqeRuQdS6';
+const EMAILJS_SERVICE_ID      = 'service_8g49q37';
+const EMAILJS_TEMPLATE_LEAD   = 'template_zinub1s';
+const EMAILJS_TEMPLATE_BUDGET = 'template_0aucomk';
+
 // ============================================================
 // NAVBAR
 // ============================================================
@@ -67,10 +73,10 @@ function renderNavbar() {
         </div>
 
         <!-- Botão CTA desktop -->
-        <a href="${WHATSAPP_LINK}" target="_blank"
-           class="hidden md:inline-flex bg-primary text-on-primary font-label-bold px-6 py-3 rounded-lg hover:shadow-[0_4px_20px_rgba(98,27,238,0.3)] hover:-translate-y-0.5 transition-all duration-200">
+        <button id="nav-cta-btn"
+           class="hidden md:inline-flex bg-primary text-on-primary font-label-bold px-6 py-3 rounded-lg hover:shadow-[0_4px_20px_rgba(98,27,238,0.3)] hover:-translate-y-0.5 transition-all duration-200 border-0 cursor-pointer">
           Falar com a Orion
-        </a>
+        </button>
 
         <!-- Botão menu mobile -->
         <button id="menu-toggle" class="md:hidden w-10 h-10 flex items-center justify-center rounded-lg bg-orion-purple text-white hover:bg-orion-purple/90 transition-colors" aria-label="Abrir menu">
@@ -128,6 +134,11 @@ function renderNavbar() {
   // Injeta o menu no topo da página
   const container = document.getElementById("navbar");
   if (container) container.innerHTML = navbar;
+
+  // Abre o modal de captura ao clicar no CTA da navbar
+  document.getElementById('nav-cta-btn')?.addEventListener('click', () => {
+    window.openLeadModal({ source: 'Navbar' });
+  });
 
   // Scroll suave ao clicar em Home — só se já estiver na index
   document.addEventListener("click", (e) => {
@@ -242,12 +253,178 @@ function renderWhatsappFab() {
 }
 
 // ============================================================
+// LEAD MODAL — captura nome + e-mail antes de ir ao WhatsApp
+// ============================================================
+
+let _leadConfig = {};
+
+function renderLeadModal() {
+  const modal = document.createElement('div');
+  modal.id = 'lead-modal';
+  modal.style.cssText = 'display:none;position:fixed;inset:0;z-index:600;align-items:center;justify-content:center;padding:1rem;';
+  modal.innerHTML = `
+    <div class="absolute inset-0 bg-black/55 backdrop-blur-sm" onclick="if(event.target===this)window.closeLeadModal()"></div>
+    <div class="relative bg-white rounded-3xl p-8 w-full max-w-[420px] shadow-2xl">
+      <button onclick="window.closeLeadModal()"
+              class="absolute top-4 right-4 w-8 h-8 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors flex items-center justify-center text-gray-500 text-sm border-0 cursor-pointer">
+        ✕
+      </button>
+
+      <div class="flex items-center gap-2 mb-5">
+        <span class="orion-dot"></span>
+        <span class="font-label-bold text-xs text-orion-purple uppercase tracking-widest">Agência Orion</span>
+      </div>
+
+      <h3 id="lead-modal-title" class="font-headline-lg text-deep-slate text-xl mb-2 leading-tight"></h3>
+      <p  id="lead-modal-subtitle" class="text-muted-gray text-sm mb-6 leading-relaxed"></p>
+
+      <p id="lead-modal-error" class="text-red-500 text-sm mb-4 hidden"></p>
+
+      <div class="flex flex-col gap-3 mb-5">
+        <input id="lead-name" type="text" placeholder="Seu nome completo"
+               class="w-full border border-outline-variant rounded-xl px-4 py-3.5 text-sm text-on-surface bg-surface-container-low focus:outline-none focus:border-orion-purple focus:ring-2 focus:ring-orion-purple/20 transition-all placeholder:text-muted-gray/50"
+               onkeydown="if(event.key==='Enter')document.getElementById('lead-email').focus()">
+        <input id="lead-email" type="email" placeholder="Seu melhor e-mail"
+               class="w-full border border-outline-variant rounded-xl px-4 py-3.5 text-sm text-on-surface bg-surface-container-low focus:outline-none focus:border-orion-purple focus:ring-2 focus:ring-orion-purple/20 transition-all placeholder:text-muted-gray/50"
+               onkeydown="if(event.key==='Enter')window.submitLead()">
+      </div>
+
+      <button id="lead-submit-btn" onclick="window.submitLead()"
+              class="w-full bg-orion-purple text-stark-white font-label-bold py-4 rounded-xl hover:shadow-[0_10px_30px_rgba(98,27,238,0.4)] transition-all uppercase tracking-wider text-sm mb-3 border-0 cursor-pointer">
+        Continuar para WhatsApp
+      </button>
+
+      <button onclick="window.skipLead()"
+              class="w-full text-muted-gray text-sm py-2 hover:text-orion-purple transition-colors bg-transparent border-0 cursor-pointer">
+        Prefiro ir direto ao WhatsApp →
+      </button>
+    </div>
+  `;
+  document.body.appendChild(modal);
+}
+
+window.openLeadModal = function(config) {
+  _leadConfig = config || {};
+  const isQuote = _leadConfig.services && _leadConfig.services.length > 0;
+
+  const titleEl    = document.getElementById('lead-modal-title');
+  const subtitleEl = document.getElementById('lead-modal-subtitle');
+  const errorEl    = document.getElementById('lead-modal-error');
+  const nameEl     = document.getElementById('lead-name');
+  const emailEl    = document.getElementById('lead-email');
+  const btnEl      = document.getElementById('lead-submit-btn');
+
+  if (titleEl) titleEl.textContent    = isQuote ? 'Quase lá!' : 'Antes de continuar';
+  if (subtitleEl) subtitleEl.textContent = isQuote
+    ? 'Deixe seu contato para recebermos o orçamento por e-mail e te retornarmos pelo WhatsApp.'
+    : 'Deixe seu contato e te retornamos pelo WhatsApp em instantes.';
+  if (errorEl)  { errorEl.textContent = ''; errorEl.classList.add('hidden'); }
+  if (nameEl)   nameEl.value  = '';
+  if (emailEl)  emailEl.value = '';
+  if (btnEl)    { btnEl.textContent = 'Continuar para WhatsApp'; btnEl.disabled = false; }
+
+  const modal = document.getElementById('lead-modal');
+  if (modal) {
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    setTimeout(() => nameEl?.focus(), 80);
+  }
+};
+
+window.closeLeadModal = function() {
+  const modal = document.getElementById('lead-modal');
+  if (modal) modal.style.display = 'none';
+  document.body.style.overflow = '';
+};
+
+window.skipLead = function() {
+  const services = _leadConfig.services;
+  window.closeLeadModal();
+  if (services && services.length > 0) {
+    const lines = services.map(s => '• ' + s).join('\n');
+    const msg = 'Olá Orion! 👋\n\nGostaria de um orçamento para:\n\n' + lines + '\n\nAguardo retorno!';
+    window.open(WHATSAPP_LINK + '?text=' + encodeURIComponent(msg), '_blank');
+  } else {
+    window.open(WHATSAPP_LINK, '_blank');
+  }
+};
+
+window.submitLead = function() {
+  const name    = document.getElementById('lead-name').value.trim();
+  const email   = document.getElementById('lead-email').value.trim();
+  const errorEl = document.getElementById('lead-modal-error');
+  const btnEl   = document.getElementById('lead-submit-btn');
+
+  if (!name || !email) {
+    if (errorEl) { errorEl.textContent = 'Por favor, preencha nome e e-mail.'; errorEl.classList.remove('hidden'); }
+    return;
+  }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    if (errorEl) { errorEl.textContent = 'E-mail inválido.'; errorEl.classList.remove('hidden'); }
+    return;
+  }
+
+  if (btnEl) { btnEl.textContent = 'Enviando...'; btnEl.disabled = true; }
+
+  const services = _leadConfig.services;
+  const source   = _leadConfig.source || 'Site';
+  const isQuote  = services && services.length > 0;
+
+  const templateParams = {
+    lead_name:  name,
+    lead_email: email,
+    source:     source,
+    services:   isQuote ? services.join(', ') : 'N/A',
+    date:       new Date().toLocaleString('pt-BR'),
+    to_email:   'contato@agenciaorionce.com.br',
+  };
+
+  function proceed() {
+    window.closeLeadModal();
+    let msg;
+    if (isQuote) {
+      const lines = services.map(s => '• ' + s).join('\n');
+      msg = `Olá Orion! 👋\n\n*Nome:* ${name}\n*E-mail:* ${email}\n\nGostaria de um orçamento para:\n\n${lines}\n\nAguardo retorno!`;
+    } else {
+      msg = `Olá Orion! 👋\n\n*Nome:* ${name}\n*E-mail:* ${email}\n\nGostaria de saber mais sobre os serviços de vocês!`;
+    }
+    window.open(WHATSAPP_LINK + '?text=' + encodeURIComponent(msg), '_blank');
+  }
+
+  const templateId = isQuote ? EMAILJS_TEMPLATE_BUDGET : EMAILJS_TEMPLATE_LEAD;
+  if (typeof emailjs !== 'undefined' && EMAILJS_PUBLIC_KEY !== 'COLE_SUA_PUBLIC_KEY') {
+    emailjs.send(EMAILJS_SERVICE_ID, templateId, templateParams).then(proceed, proceed);
+  } else {
+    proceed();
+  }
+};
+
+function loadEmailJS() {
+  if (EMAILJS_PUBLIC_KEY === 'COLE_SUA_PUBLIC_KEY') return;
+  const script = document.createElement('script');
+  script.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js';
+  script.onload = () => emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+  document.head.appendChild(script);
+}
+
+// ============================================================
 // INICIALIZAÇÃO: roda tudo quando a página carrega
 // ============================================================
 document.addEventListener("DOMContentLoaded", () => {
   renderNavbar();
   renderFooter();
   renderWhatsappFab();
+  renderLeadModal();
+  loadEmailJS();
+
+  // Wire up CTA final do index (cta-whatsapp) para abrir modal
+  const ctaWhatsapp = document.getElementById('cta-whatsapp');
+  if (ctaWhatsapp) {
+    ctaWhatsapp.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.openLeadModal({ source: 'CTA Final - Início' });
+    });
+  }
 
   // Navbar shrink ao rolar — roda aqui pois o navbar já foi injetado
   const nav      = document.getElementById("main-nav");
@@ -266,8 +443,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Injeta o link do WhatsApp em todos os botões marcados com data-whatsapp
-  document.querySelectorAll("[id='cta-whatsapp'], [id='btn-whatsapp-contato']").forEach(el => {
-    el.href = WHATSAPP_LINK;
-  });
+  // Injeta o link do WhatsApp no botão de contato da página contato.html
+  const btnWhatsappContato = document.getElementById('btn-whatsapp-contato');
+  if (btnWhatsappContato) btnWhatsappContato.href = WHATSAPP_LINK;
 });
