@@ -187,7 +187,7 @@
         ? selectedServices.join(', ')
         : "Não informado";
 
-      const text = `Olá, Agência Orion! 👋\n\n*Nome:* ${name}\n*E-mail:* ${email || "Não informado"}\n*Serviços:* ${serviceLabel}\n\n*Mensagem:*\n${message}`;
+      const text = `Olá, Agência Orion!\n\n*Nome:* ${name}\n*E-mail:* ${email || "Não informado"}\n*Serviços:* ${serviceLabel}\n\n*Mensagem:*\n${message}`;
 
       const encoded = encodeURIComponent(text);
       window.open(`${window.WHATSAPP_LINK}?text=${encoded}`, "_blank");

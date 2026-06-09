@@ -342,7 +342,7 @@ window.skipLead = function() {
   window.closeLeadModal();
   if (services && services.length > 0) {
     const lines = services.map(s => '• ' + s).join('\n');
-    const msg = 'Olá Orion! 👋\n\nGostaria de um orçamento para:\n\n' + lines + '\n\nAguardo retorno!';
+    const msg = 'Olá Orion!\n\nGostaria de um orçamento para:\n\n' + lines + '\n\nAguardo retorno!';
     window.open(WHATSAPP_LINK + '?text=' + encodeURIComponent(msg), '_blank');
   } else {
     window.open(WHATSAPP_LINK, '_blank');
@@ -384,9 +384,9 @@ window.submitLead = function() {
     let msg;
     if (isQuote) {
       const lines = services.map(s => '• ' + s).join('\n');
-      msg = `Olá Orion! 👋\n\n*Nome:* ${name}\n*E-mail:* ${email}\n\nGostaria de um orçamento para:\n\n${lines}\n\nAguardo retorno!`;
+      msg = `Olá Orion!\n\n*Nome:* ${name}\n*E-mail:* ${email}\n\nGostaria de um orçamento para:\n\n${lines}\n\nAguardo retorno!`;
     } else {
-      msg = `Olá Orion! 👋\n\n*Nome:* ${name}\n*E-mail:* ${email}\n\nGostaria de saber mais sobre os serviços de vocês!`;
+      msg = `Olá Orion!\n\n*Nome:* ${name}\n*E-mail:* ${email}\n\nGostaria de saber mais sobre os serviços de vocês!`;
     }
     window.open(WHATSAPP_LINK + '?text=' + encodeURIComponent(msg), '_blank');
   }
