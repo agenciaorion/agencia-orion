@@ -430,6 +430,20 @@ function loadEmailJS() {
   document.head.appendChild(script);
 }
 
+// Helper global — usado pelo formulário de contato.html
+window.sendContactEmail = function(params) {
+  if (typeof emailjs === 'undefined' || EMAILJS_PUBLIC_KEY === 'COLE_SUA_PUBLIC_KEY') return;
+  emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_BUDGET, {
+    lead_name:  params.name,
+    lead_email: params.email || 'Não informado',
+    services:   params.services || 'Não informado',
+    message:    params.message || '',
+    source:     'Formulário de Contato',
+    date:       new Date().toLocaleString('pt-BR'),
+    to_email:   'contato@agenciaorionce.com.br',
+  });
+};
+
 // ============================================================
 // INICIALIZAÇÃO: roda tudo quando a página carrega
 // ============================================================

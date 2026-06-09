@@ -187,6 +187,9 @@
         ? selectedServices.join(', ')
         : "Não informado";
 
+      // Envia e-mail com os dados do formulário
+      window.sendContactEmail({ name, email, services: serviceLabel, message });
+
       const text = `Olá, Agência Orion!\n\n*Nome:* ${name}\n*E-mail:* ${email || "Não informado"}\n*Serviços:* ${serviceLabel}\n\n*Mensagem:*\n${message}`;
 
       const encoded = encodeURIComponent(text);
