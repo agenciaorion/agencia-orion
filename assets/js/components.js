@@ -259,12 +259,21 @@ function renderWhatsappFab() {
 let _leadConfig = {};
 
 function renderLeadModal() {
+  const chipStyle = document.createElement('style');
+  chipStyle.textContent = '.lead-chip.lead-chip-selected{background:rgba(98,27,238,0.08);border-color:#621BEE;color:#621BEE;}';
+  document.head.appendChild(chipStyle);
+
+  const CHIP_SERVICES = ['Estratégia & Branding','Tráfego Pago','Social Media','Design Gráfico','AudioVisual','Drone','Cobertura de Eventos','Influencers','Sites & Apps','Não sei ainda'];
+  const chipsHTML = CHIP_SERVICES.map(s =>
+    `<button type="button" data-service="${s}" class="lead-chip px-3 py-1.5 rounded-lg border border-outline-variant/60 text-xs font-label-bold text-on-surface bg-surface-container-low hover:border-orion-purple/50 hover:text-orion-purple transition-all cursor-pointer" onclick="this.classList.toggle('lead-chip-selected')">${s}</button>`
+  ).join('');
+
   const modal = document.createElement('div');
   modal.id = 'lead-modal';
   modal.style.cssText = 'display:none;position:fixed;inset:0;z-index:600;align-items:center;justify-content:center;padding:1rem;';
   modal.innerHTML = `
     <div class="absolute inset-0 bg-black/55 backdrop-blur-sm" onclick="if(event.target===this)window.closeLeadModal()"></div>
-    <div class="relative bg-white rounded-3xl p-8 w-full max-w-[420px] shadow-2xl">
+    <div class="relative bg-white rounded-3xl p-8 w-full max-w-[440px] shadow-2xl">
       <button onclick="window.closeLeadModal()"
               class="absolute top-4 right-4 w-8 h-8 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors flex items-center justify-center text-gray-500 text-sm border-0 cursor-pointer">
         ✕
@@ -276,17 +285,22 @@ function renderLeadModal() {
       </div>
 
       <h3 id="lead-modal-title" class="font-headline-lg text-deep-slate text-xl mb-2 leading-tight"></h3>
-      <p  id="lead-modal-subtitle" class="text-muted-gray text-sm mb-6 leading-relaxed"></p>
+      <p  id="lead-modal-subtitle" class="text-muted-gray text-sm mb-5 leading-relaxed"></p>
 
       <p id="lead-modal-error" class="text-red-500 text-sm mb-4 hidden"></p>
 
-      <div class="flex flex-col gap-3 mb-5">
+      <div class="flex flex-col gap-3 mb-4">
         <input id="lead-name" type="text" placeholder="Seu nome completo"
                class="w-full border border-outline-variant rounded-xl px-4 py-3.5 text-sm text-on-surface bg-surface-container-low focus:outline-none focus:border-orion-purple focus:ring-2 focus:ring-orion-purple/20 transition-all placeholder:text-muted-gray/50"
                onkeydown="if(event.key==='Enter')document.getElementById('lead-email').focus()">
         <input id="lead-email" type="email" placeholder="Seu melhor e-mail"
                class="w-full border border-outline-variant rounded-xl px-4 py-3.5 text-sm text-on-surface bg-surface-container-low focus:outline-none focus:border-orion-purple focus:ring-2 focus:ring-orion-purple/20 transition-all placeholder:text-muted-gray/50"
                onkeydown="if(event.key==='Enter')window.submitLead()">
+      </div>
+
+      <div id="lead-chips-section" class="mb-5">
+        <p class="text-xs text-muted-gray/70 mb-2 uppercase tracking-wider font-label-bold">Serviço de interesse <span class="font-normal normal-case tracking-normal opacity-60">(opcional)</span></p>
+        <div class="flex flex-wrap gap-1.5">${chipsHTML}</div>
       </div>
 
       <button id="lead-submit-btn" onclick="window.submitLead()"
@@ -322,6 +336,11 @@ window.openLeadModal = function(config) {
   if (nameEl)   nameEl.value  = '';
   if (emailEl)  emailEl.value = '';
   if (btnEl)    { btnEl.textContent = 'Continuar para WhatsApp'; btnEl.disabled = false; }
+
+  // Chips: esconde quando serviços já foram escolhidos (orçamento); reseta seleção
+  const chipsSection = document.getElementById('lead-chips-section');
+  if (chipsSection) chipsSection.style.display = isQuote ? 'none' : 'block';
+  document.querySelectorAll('.lead-chip').forEach(c => c.classList.remove('lead-chip-selected'));
 
   const modal = document.getElementById('lead-modal');
   if (modal) {
@@ -366,15 +385,19 @@ window.submitLead = function() {
 
   if (btnEl) { btnEl.textContent = 'Enviando...'; btnEl.disabled = true; }
 
-  const services = _leadConfig.services;
-  const source   = _leadConfig.source || 'Site';
-  const isQuote  = services && services.length > 0;
+  const configServices = _leadConfig.services;
+  const source         = _leadConfig.source || 'Site';
+  const isQuote        = configServices && configServices.length > 0;
+
+  // Chips selecionados no modal (quando não é orçamento pré-configurado)
+  const modalChips = Array.from(document.querySelectorAll('.lead-chip.lead-chip-selected')).map(c => c.dataset.service);
+  const services   = isQuote ? configServices : (modalChips.length > 0 ? modalChips : null);
 
   const templateParams = {
     lead_name:  name,
     lead_email: email,
     source:     source,
-    services:   isQuote ? services.join(', ') : 'N/A',
+    services:   services ? services.join(', ') : 'Não informado',
     date:       new Date().toLocaleString('pt-BR'),
     to_email:   'contato@agenciaorionce.com.br',
   };
@@ -382,7 +405,7 @@ window.submitLead = function() {
   function proceed() {
     window.closeLeadModal();
     let msg;
-    if (isQuote) {
+    if (services && services.length > 0) {
       const lines = services.map(s => '• ' + s).join('\n');
       msg = `Olá Orion!\n\n*Nome:* ${name}\n*E-mail:* ${email}\n\nGostaria de um orçamento para:\n\n${lines}\n\nAguardo retorno!`;
     } else {
