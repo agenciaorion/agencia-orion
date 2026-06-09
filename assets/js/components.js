@@ -398,6 +398,7 @@ window.submitLead = function() {
     lead_email: email,
     source:     source,
     services:   services ? services.join(', ') : 'Não informado',
+    message:    '',
     date:       new Date().toLocaleString('pt-BR'),
     to_email:   'contato@agenciaorionce.com.br',
   };
