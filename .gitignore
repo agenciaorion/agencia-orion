@@ -1,6 +1,7 @@
 # Arquivos sensíveis
 Senhas.txt
 .mcp/
+.claude/
 
 # Sistema operacional
 .DS_Store
