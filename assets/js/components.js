@@ -263,7 +263,7 @@ function renderLeadModal() {
   chipStyle.textContent = '.lead-chip.lead-chip-selected{background:rgba(98,27,238,0.08);border-color:#621BEE;color:#621BEE;}';
   document.head.appendChild(chipStyle);
 
-  const CHIP_SERVICES = ['Estratégia & Branding','Tráfego Pago','Social Media','Design Gráfico','AudioVisual','Drone','Cobertura de Eventos','Influencers','Sites & Apps','Não sei ainda'];
+  const CHIP_SERVICES = ['Estratégia & Branding','Tráfego Pago','Social Media','Design Gráfico','AudioVisual','Drone','Cobertura de Eventos','Influencers','Sites & Apps','Produção de Áudio','Masterização de Áudio','Não sei ainda'];
   const chipsHTML = CHIP_SERVICES.map(s =>
     `<button type="button" data-service="${s}" class="lead-chip px-3 py-1.5 rounded-lg border border-outline-variant/60 text-xs font-label-bold text-on-surface bg-surface-container-low hover:border-orion-purple/50 hover:text-orion-purple transition-all cursor-pointer" onclick="this.classList.toggle('lead-chip-selected')">${s}</button>`
   ).join('');

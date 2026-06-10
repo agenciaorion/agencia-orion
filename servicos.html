@@ -19,7 +19,6 @@
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <script src="assets/js/tailwind.config.js"></script>
   <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap">
 
   <style>
     /* Quote bar slide animation */
@@ -215,6 +214,87 @@
               </div>
               <div class="absolute inset-0 flex items-center justify-center">
                 <span class="material-symbols-outlined text-orion-purple text-[56px]" style="font-variation-settings:'FILL' 0,'wght' 200,'opsz' 48">videocam</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Produção de Áudio Comercial -->
+        <div data-service="Produção de Áudio"
+             class="service-card fade-in bg-stark-white rounded-3xl p-6 shadow-sm border border-outline-variant/20 hover:border-orion-purple/40 hover:shadow-[0_16px_40px_rgba(98,27,238,0.1)] hover:scale-[1.005] transition-all duration-300">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-11 h-11 bg-orion-purple/10 rounded-xl flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-orion-purple text-2xl">mic</span>
+            </div>
+            <h2 class="font-headline-lg text-xl text-deep-slate">Produção de Áudio Comercial</h2>
+          </div>
+          <p class="text-muted-gray mb-4 leading-relaxed text-sm">Do roteiro à finalização, produzimos peças sonoras que comunicam sua marca com impacto e alcançam seu público onde ele está.</p>
+          <div class="flex gap-4 items-stretch">
+            <div class="flex flex-col flex-1">
+              <ul class="space-y-2 mb-5 text-sm flex-1">
+                <li class="flex items-center gap-2 text-on-surface"><span class="material-symbols-outlined text-orion-purple text-base">check_circle</span> Rádio comercial e volante</li>
+                <li class="flex items-center gap-2 text-on-surface"><span class="material-symbols-outlined text-orion-purple text-base">check_circle</span> Vinhetas e jingles para loja</li>
+                <li class="flex items-center gap-2 text-on-surface"><span class="material-symbols-outlined text-orion-purple text-base">check_circle</span> Locução comercial profissional</li>
+              </ul>
+              <button class="quote-btn quote-btn-sm self-start" data-state="default">
+                <span class="material-symbols-outlined" style="font-size:14px">add</span>
+                Adicionar ao orçamento
+              </button>
+            </div>
+            <div class="hidden md:block w-48 shrink-0 rounded-xl overflow-hidden bg-deep-slate relative p-5 flex flex-col justify-center">
+              <div class="flex items-end justify-center gap-1.5 h-20 mb-4">
+                <div class="w-1.5 rounded-full" style="height:25%; background:rgba(98,27,238,0.25)"></div>
+                <div class="w-1.5 rounded-full" style="height:50%; background:rgba(98,27,238,0.40)"></div>
+                <div class="w-1.5 rounded-full" style="height:75%; background:rgba(98,27,238,0.55)"></div>
+                <div class="w-2 rounded-full" style="height:100%; background:#621BEE"></div>
+                <div class="w-1.5 rounded-full" style="height:75%; background:rgba(98,27,238,0.55)"></div>
+                <div class="w-1.5 rounded-full" style="height:50%; background:rgba(98,27,238,0.40)"></div>
+                <div class="w-1.5 rounded-full" style="height:25%; background:rgba(98,27,238,0.25)"></div>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-orion-purple text-lg">mic</span>
+                <div class="flex-1 h-px bg-orion-purple/20 rounded"></div>
+                <span class="text-orion-purple/60 text-xs font-mono">REC</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Masterização de Áudio -->
+        <div data-service="Masterização de Áudio"
+             class="service-card fade-in bg-stark-white rounded-3xl p-6 shadow-sm border border-outline-variant/20 hover:border-orion-purple/40 hover:shadow-[0_16px_40px_rgba(98,27,238,0.1)] hover:scale-[1.005] transition-all duration-300">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-11 h-11 bg-orion-purple/10 rounded-xl flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-orion-purple text-2xl">graphic_eq</span>
+            </div>
+            <h2 class="font-headline-lg text-xl text-deep-slate">Masterização de Áudio</h2>
+          </div>
+          <p class="text-muted-gray mb-4 leading-relaxed text-sm">Transformamos gravações brutas em áudio profissional. Tratamos e finalizamos seu conteúdo sonoro para soar com qualidade de estúdio em qualquer plataforma.</p>
+          <div class="flex gap-4 items-stretch">
+            <div class="flex flex-col flex-1">
+              <ul class="space-y-2 mb-5 text-sm flex-1">
+                <li class="flex items-center gap-2 text-on-surface"><span class="material-symbols-outlined text-orion-purple text-base">check_circle</span> Masterização de comerciais e jingles</li>
+                <li class="flex items-center gap-2 text-on-surface"><span class="material-symbols-outlined text-orion-purple text-base">check_circle</span> Equalização e remoção de ruídos</li>
+                <li class="flex items-center gap-2 text-on-surface"><span class="material-symbols-outlined text-orion-purple text-base">check_circle</span> Masterização para rádio e plataformas digitais</li>
+              </ul>
+              <button class="quote-btn quote-btn-sm self-start" data-state="default">
+                <span class="material-symbols-outlined" style="font-size:14px">add</span>
+                Adicionar ao orçamento
+              </button>
+            </div>
+            <div class="hidden md:block w-48 shrink-0 rounded-xl overflow-hidden bg-deep-slate relative p-5 flex flex-col justify-center">
+              <div class="flex items-end gap-1 h-20 mb-4">
+                <div class="flex-1 rounded-t-sm" style="height:55%; background:rgba(98,27,238,0.35)"></div>
+                <div class="flex-1 rounded-t-sm" style="height:80%; background:rgba(98,27,238,0.55)"></div>
+                <div class="flex-1 rounded-t-sm" style="height:40%; background:rgba(98,27,238,0.30)"></div>
+                <div class="flex-1 rounded-t-sm" style="height:100%; background:#621BEE"></div>
+                <div class="flex-1 rounded-t-sm" style="height:65%; background:rgba(98,27,238,0.50)"></div>
+                <div class="flex-1 rounded-t-sm" style="height:35%; background:rgba(98,27,238,0.25)"></div>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-orion-purple text-lg">graphic_eq</span>
+                <div class="flex-1 h-px bg-orion-purple/20 rounded"></div>
+                <span class="text-orion-purple/60 text-xs font-mono">EQ</span>
               </div>
             </div>
           </div>
