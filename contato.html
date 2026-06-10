@@ -2,6 +2,7 @@
 <html lang="pt-BR" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
+  <script>(function(){var t=localStorage.getItem('orion-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark');}})();</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contato | Agência Orion — Fale com a Agência de Marketing no Ceará</title>
   <link rel="icon" type="image/jpeg" href="assets/images/logo.jpg">
@@ -28,22 +29,22 @@
   </style>
 </head>
 
-<body class="bg-background text-on-background overflow-x-hidden font-body-md">
+<body class="bg-background dark:bg-[#0f0f13] text-on-background dark:text-[#e8e6ef] overflow-x-hidden font-body-md">
 
   <div id="navbar"></div>
 
   <!-- HERO -->
-  <header class="pt-6 pb-12 md:pt-20 md:pb-16 px-margin-mobile md:px-margin-desktop bg-surface-container-low kinetic-bg">
+  <header class="pt-6 pb-12 md:pt-20 md:pb-16 px-margin-mobile md:px-margin-desktop bg-surface-container-low dark:bg-[#1a1a1f] kinetic-bg">
     <div class="max-w-container-max mx-auto w-full fade-in">
       <div class="flex items-center gap-2 mb-4">
         <span class="orion-dot"></span>
         <span class="font-label-bold text-primary tracking-widest uppercase text-sm">Fale conosco</span>
       </div>
-      <h1 class="font-display-lg text-[48px] md:text-[64px] text-deep-slate mb-6 leading-[1.1]">
+      <h1 class="font-display-lg text-[48px] md:text-[64px] text-deep-slate dark:text-[#e8e6ef] mb-6 leading-[1.1]">
         Vamos conversar <br>
         <span class="text-orion-purple">sobre o seu negócio.</span>
       </h1>
-      <p class="font-body-lg text-body-lg text-muted-gray max-w-xl">
+      <p class="font-body-lg text-body-lg text-muted-gray dark:text-[#9994a8] max-w-xl">
         Sem compromisso. Entendemos o seu momento e indicamos o melhor caminho.
       </p>
     </div>
@@ -54,57 +55,57 @@
     <div class="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
       <!-- Formulário -->
-      <div class="fade-in bg-stark-white rounded-3xl p-10 shadow-sm border border-outline-variant/20">
-        <h2 class="font-headline-lg text-[32px] md:text-headline-lg text-deep-slate mb-8">Envie uma mensagem</h2>
+      <div class="fade-in bg-stark-white dark:bg-[#1e1e24] rounded-3xl p-10 shadow-sm border border-outline-variant/20 dark:border-white/[0.08]">
+        <h2 class="font-headline-lg text-[32px] md:text-headline-lg text-deep-slate dark:text-[#e8e6ef] mb-8">Envie uma mensagem</h2>
 
         <div class="space-y-6" id="contact-form">
 
           <div>
-            <label class="block font-label-bold text-sm text-on-surface mb-2 uppercase tracking-wider">Nome</label>
+            <label class="block font-label-bold text-sm text-on-surface dark:text-[#e8e6ef] mb-2 uppercase tracking-wider">Nome</label>
             <input
               type="text"
               id="field-name"
               placeholder="Seu nome completo"
-              class="w-full border border-outline-variant rounded-xl px-5 py-4 font-body-md text-on-surface bg-surface-container-low focus:outline-none focus:border-orion-purple focus:ring-2 focus:ring-orion-purple/20 transition-all placeholder:text-muted-gray/50"
+              class="w-full border border-outline-variant dark:border-white/[0.12] rounded-xl px-5 py-4 font-body-md text-on-surface dark:text-[#e8e6ef] bg-surface-container-low dark:bg-[#16161a] focus:outline-none focus:border-orion-purple focus:ring-2 focus:ring-orion-purple/20 transition-all placeholder:text-muted-gray/50 dark:placeholder:text-white/30"
             >
           </div>
 
           <div>
-            <label class="block font-label-bold text-sm text-on-surface mb-2 uppercase tracking-wider">E-mail</label>
+            <label class="block font-label-bold text-sm text-on-surface dark:text-[#e8e6ef] mb-2 uppercase tracking-wider">E-mail</label>
             <input
               type="email"
               id="field-email"
               placeholder="seu@email.com"
-              class="w-full border border-outline-variant rounded-xl px-5 py-4 font-body-md text-on-surface bg-surface-container-low focus:outline-none focus:border-orion-purple focus:ring-2 focus:ring-orion-purple/20 transition-all placeholder:text-muted-gray/50"
+              class="w-full border border-outline-variant dark:border-white/[0.12] rounded-xl px-5 py-4 font-body-md text-on-surface dark:text-[#e8e6ef] bg-surface-container-low dark:bg-[#16161a] focus:outline-none focus:border-orion-purple focus:ring-2 focus:ring-orion-purple/20 transition-all placeholder:text-muted-gray/50 dark:placeholder:text-white/30"
             >
           </div>
 
           <div>
-            <label class="block font-label-bold text-sm text-on-surface mb-3 uppercase tracking-wider">Serviços de interesse</label>
+            <label class="block font-label-bold text-sm text-on-surface dark:text-[#e8e6ef] mb-3 uppercase tracking-wider">Serviços de interesse</label>
             <div id="service-chips" class="flex flex-wrap gap-2">
-              <button type="button" data-service="Estratégia &amp; Branding" class="service-chip px-4 py-2 rounded-xl border border-outline-variant/60 text-sm font-label-bold text-on-surface bg-surface-container-low hover:border-orion-purple/50 hover:text-orion-purple transition-all">Estratégia &amp; Branding</button>
-              <button type="button" data-service="Tráfego Pago" class="service-chip px-4 py-2 rounded-xl border border-outline-variant/60 text-sm font-label-bold text-on-surface bg-surface-container-low hover:border-orion-purple/50 hover:text-orion-purple transition-all">Tráfego Pago</button>
-              <button type="button" data-service="Social Media" class="service-chip px-4 py-2 rounded-xl border border-outline-variant/60 text-sm font-label-bold text-on-surface bg-surface-container-low hover:border-orion-purple/50 hover:text-orion-purple transition-all">Social Media</button>
-              <button type="button" data-service="Design Gráfico" class="service-chip px-4 py-2 rounded-xl border border-outline-variant/60 text-sm font-label-bold text-on-surface bg-surface-container-low hover:border-orion-purple/50 hover:text-orion-purple transition-all">Design Gráfico</button>
-              <button type="button" data-service="AudioVisual" class="service-chip px-4 py-2 rounded-xl border border-outline-variant/60 text-sm font-label-bold text-on-surface bg-surface-container-low hover:border-orion-purple/50 hover:text-orion-purple transition-all">AudioVisual</button>
-              <button type="button" data-service="Drone" class="service-chip px-4 py-2 rounded-xl border border-outline-variant/60 text-sm font-label-bold text-on-surface bg-surface-container-low hover:border-orion-purple/50 hover:text-orion-purple transition-all">Drone</button>
-              <button type="button" data-service="Cobertura de Eventos" class="service-chip px-4 py-2 rounded-xl border border-outline-variant/60 text-sm font-label-bold text-on-surface bg-surface-container-low hover:border-orion-purple/50 hover:text-orion-purple transition-all">Cobertura de Eventos</button>
-              <button type="button" data-service="Influencers" class="service-chip px-4 py-2 rounded-xl border border-outline-variant/60 text-sm font-label-bold text-on-surface bg-surface-container-low hover:border-orion-purple/50 hover:text-orion-purple transition-all">Influencers</button>
-              <button type="button" data-service="Sites &amp; Apps" class="service-chip px-4 py-2 rounded-xl border border-outline-variant/60 text-sm font-label-bold text-on-surface bg-surface-container-low hover:border-orion-purple/50 hover:text-orion-purple transition-all">Sites &amp; Apps</button>
-              <button type="button" data-service="Produção de Áudio" class="service-chip px-4 py-2 rounded-xl border border-outline-variant/60 text-sm font-label-bold text-on-surface bg-surface-container-low hover:border-orion-purple/50 hover:text-orion-purple transition-all">Produção de Áudio</button>
-              <button type="button" data-service="Masterização de Áudio" class="service-chip px-4 py-2 rounded-xl border border-outline-variant/60 text-sm font-label-bold text-on-surface bg-surface-container-low hover:border-orion-purple/50 hover:text-orion-purple transition-all">Masterização de Áudio</button>
-              <button type="button" data-service="Não sei ainda" class="service-chip px-4 py-2 rounded-xl border border-outline-variant/60 text-sm font-label-bold text-on-surface bg-surface-container-low hover:border-orion-purple/50 hover:text-orion-purple transition-all">Não sei ainda</button>
+              <button type="button" data-service="Estratégia &amp; Branding" class="service-chip px-4 py-2 rounded-xl border border-outline-variant/60 dark:border-white/[0.10] text-sm font-label-bold text-on-surface dark:text-[#e8e6ef] bg-surface-container-low dark:bg-[#16161a] hover:border-orion-purple/50 hover:text-orion-purple transition-all">Estratégia &amp; Branding</button>
+              <button type="button" data-service="Tráfego Pago" class="service-chip px-4 py-2 rounded-xl border border-outline-variant/60 dark:border-white/[0.10] text-sm font-label-bold text-on-surface dark:text-[#e8e6ef] bg-surface-container-low dark:bg-[#16161a] hover:border-orion-purple/50 hover:text-orion-purple transition-all">Tráfego Pago</button>
+              <button type="button" data-service="Social Media" class="service-chip px-4 py-2 rounded-xl border border-outline-variant/60 dark:border-white/[0.10] text-sm font-label-bold text-on-surface dark:text-[#e8e6ef] bg-surface-container-low dark:bg-[#16161a] hover:border-orion-purple/50 hover:text-orion-purple transition-all">Social Media</button>
+              <button type="button" data-service="Design Gráfico" class="service-chip px-4 py-2 rounded-xl border border-outline-variant/60 dark:border-white/[0.10] text-sm font-label-bold text-on-surface dark:text-[#e8e6ef] bg-surface-container-low dark:bg-[#16161a] hover:border-orion-purple/50 hover:text-orion-purple transition-all">Design Gráfico</button>
+              <button type="button" data-service="AudioVisual" class="service-chip px-4 py-2 rounded-xl border border-outline-variant/60 dark:border-white/[0.10] text-sm font-label-bold text-on-surface dark:text-[#e8e6ef] bg-surface-container-low dark:bg-[#16161a] hover:border-orion-purple/50 hover:text-orion-purple transition-all">AudioVisual</button>
+              <button type="button" data-service="Drone" class="service-chip px-4 py-2 rounded-xl border border-outline-variant/60 dark:border-white/[0.10] text-sm font-label-bold text-on-surface dark:text-[#e8e6ef] bg-surface-container-low dark:bg-[#16161a] hover:border-orion-purple/50 hover:text-orion-purple transition-all">Drone</button>
+              <button type="button" data-service="Cobertura de Eventos" class="service-chip px-4 py-2 rounded-xl border border-outline-variant/60 dark:border-white/[0.10] text-sm font-label-bold text-on-surface dark:text-[#e8e6ef] bg-surface-container-low dark:bg-[#16161a] hover:border-orion-purple/50 hover:text-orion-purple transition-all">Cobertura de Eventos</button>
+              <button type="button" data-service="Influencers" class="service-chip px-4 py-2 rounded-xl border border-outline-variant/60 dark:border-white/[0.10] text-sm font-label-bold text-on-surface dark:text-[#e8e6ef] bg-surface-container-low dark:bg-[#16161a] hover:border-orion-purple/50 hover:text-orion-purple transition-all">Influencers</button>
+              <button type="button" data-service="Sites &amp; Apps" class="service-chip px-4 py-2 rounded-xl border border-outline-variant/60 dark:border-white/[0.10] text-sm font-label-bold text-on-surface dark:text-[#e8e6ef] bg-surface-container-low dark:bg-[#16161a] hover:border-orion-purple/50 hover:text-orion-purple transition-all">Sites &amp; Apps</button>
+              <button type="button" data-service="Produção de Áudio" class="service-chip px-4 py-2 rounded-xl border border-outline-variant/60 dark:border-white/[0.10] text-sm font-label-bold text-on-surface dark:text-[#e8e6ef] bg-surface-container-low dark:bg-[#16161a] hover:border-orion-purple/50 hover:text-orion-purple transition-all">Produção de Áudio</button>
+              <button type="button" data-service="Masterização de Áudio" class="service-chip px-4 py-2 rounded-xl border border-outline-variant/60 dark:border-white/[0.10] text-sm font-label-bold text-on-surface dark:text-[#e8e6ef] bg-surface-container-low dark:bg-[#16161a] hover:border-orion-purple/50 hover:text-orion-purple transition-all">Masterização de Áudio</button>
+              <button type="button" data-service="Não sei ainda" class="service-chip px-4 py-2 rounded-xl border border-outline-variant/60 dark:border-white/[0.10] text-sm font-label-bold text-on-surface dark:text-[#e8e6ef] bg-surface-container-low dark:bg-[#16161a] hover:border-orion-purple/50 hover:text-orion-purple transition-all">Não sei ainda</button>
             </div>
-            <p class="text-muted-gray/60 text-xs mt-2">Selecione um ou mais serviços</p>
+            <p class="text-muted-gray dark:text-[#9994a8]/60 text-xs mt-2">Selecione um ou mais serviços</p>
           </div>
 
           <div>
-            <label class="block font-label-bold text-sm text-on-surface mb-2 uppercase tracking-wider">Mensagem</label>
+            <label class="block font-label-bold text-sm text-on-surface dark:text-[#e8e6ef] mb-2 uppercase tracking-wider">Mensagem</label>
             <textarea
               id="field-message"
               rows="5"
               placeholder="Fale um pouco sobre o seu negócio e o que você precisa..."
-              class="w-full border border-outline-variant rounded-xl px-5 py-4 font-body-md text-on-surface bg-surface-container-low focus:outline-none focus:border-orion-purple focus:ring-2 focus:ring-orion-purple/20 transition-all placeholder:text-muted-gray/50 resize-none"
+              class="w-full border border-outline-variant dark:border-white/[0.12] rounded-xl px-5 py-4 font-body-md text-on-surface dark:text-[#e8e6ef] bg-surface-container-low dark:bg-[#16161a] focus:outline-none focus:border-orion-purple focus:ring-2 focus:ring-orion-purple/20 transition-all placeholder:text-muted-gray/50 dark:placeholder:text-white/30 resize-none"
             ></textarea>
           </div>
 
@@ -116,7 +117,7 @@
             Enviar pelo WhatsApp
           </button>
 
-          <p class="text-muted-gray text-xs text-center">Ao clicar, você será redirecionado ao WhatsApp com sua mensagem preenchida automaticamente.</p>
+          <p class="text-muted-gray dark:text-[#9994a8] text-xs text-center">Ao clicar, você será redirecionado ao WhatsApp com sua mensagem preenchida automaticamente.</p>
         </div>
       </div>
 
@@ -133,19 +134,19 @@
           </a>
         </div>
 
-        <div class="bg-stark-white border border-outline-variant/20 p-8 rounded-3xl shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-orion-purple/30">
+        <div class="bg-stark-white dark:bg-[#1e1e24] border border-outline-variant/20 dark:border-white/[0.08] p-8 rounded-3xl shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-orion-purple/30">
           <span class="material-symbols-outlined text-orion-purple text-4xl mb-4 block">alternate_email</span>
-          <h3 class="font-headline-lg text-xl text-deep-slate mb-3">E-mail</h3>
-          <p class="text-muted-gray mb-3">Para propostas formais e documentos.</p>
+          <h3 class="font-headline-lg text-xl text-deep-slate dark:text-[#e8e6ef] mb-3">E-mail</h3>
+          <p class="text-muted-gray dark:text-[#9994a8] mb-3">Para propostas formais e documentos.</p>
           <a href="mailto:contato@agenciaorionce.com.br" class="text-orion-purple font-label-bold hover:underline">
             contato@agenciaorionce.com.br
           </a>
         </div>
 
-        <div class="bg-stark-white border border-outline-variant/20 p-8 rounded-3xl shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-orion-purple/30">
+        <div class="bg-stark-white dark:bg-[#1e1e24] border border-outline-variant/20 dark:border-white/[0.08] p-8 rounded-3xl shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-orion-purple/30">
           <span class="material-symbols-outlined text-orion-purple text-4xl mb-4 block">photo_camera</span>
-          <h3 class="font-headline-lg text-xl text-deep-slate mb-3">Instagram</h3>
-          <p class="text-muted-gray mb-3">Acompanhe nosso trabalho e mande uma DM.</p>
+          <h3 class="font-headline-lg text-xl text-deep-slate dark:text-[#e8e6ef] mb-3">Instagram</h3>
+          <p class="text-muted-gray dark:text-[#9994a8] mb-3">Acompanhe nosso trabalho e mande uma DM.</p>
           <a href="https://instagram.com/_agencia.orion" target="_blank" rel="noopener noreferrer" class="text-orion-purple font-label-bold hover:underline">
             @_agencia.orion
           </a>

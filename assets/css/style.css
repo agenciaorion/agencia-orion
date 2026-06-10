@@ -243,3 +243,19 @@ header > div > div { opacity: 1 !important; transform: none !important; }
   50%  { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
+
+/* --- Dark mode: chip selecionado --- */
+.dark .service-chip.chip-selected {
+  background: rgba(98, 27, 238, 0.15);
+  border-color: #8b5cf6;
+  color: #c4b5fd;
+}
+
+/* --- Dark mode: fundo radial no hero --- */
+.dark .kinetic-bg {
+  background-image: radial-gradient(
+    circle at 100% 100%,
+    rgba(98, 27, 238, 0.1) 0%,
+    transparent 50%
+  );
+}

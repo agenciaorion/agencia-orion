@@ -18,6 +18,32 @@ const EMAILJS_TEMPLATE_LEAD   = 'template_zinub1s';
 const EMAILJS_TEMPLATE_BUDGET = 'template_0aucomk';
 
 // ============================================================
+// DARK MODE
+// ============================================================
+function updateDarkIcons() {
+  var isDark = document.documentElement.classList.contains('dark');
+  var icon = isDark ? 'dark_mode' : 'light_mode';
+  ['dark-icon', 'dark-icon-mobile'].forEach(function(id) {
+    var el = document.getElementById(id);
+    if (el) el.textContent = icon;
+  });
+}
+
+window.toggleDark = function() {
+  var isDark = document.documentElement.classList.toggle('dark');
+  localStorage.setItem('orion-theme', isDark ? 'dark' : 'light');
+  updateDarkIcons();
+};
+
+function initDarkMode() {
+  var t = localStorage.getItem('orion-theme');
+  if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    document.documentElement.classList.add('dark');
+  }
+  updateDarkIcons();
+}
+
+// ============================================================
 // NAVBAR
 // ============================================================
 function renderNavbar() {
@@ -35,7 +61,7 @@ function renderNavbar() {
     .map(({ href, label }) => {
       const isActive = currentPage === href
         ? "text-primary border-b-2 border-primary pb-0.5"
-        : "text-on-surface-variant";
+        : "text-on-surface-variant dark:text-white/60";
       return `
         <a href="${href}"
            class="nav-link font-label-bold text-sm uppercase tracking-wider ${isActive} px-3 py-2 hover:text-primary transition-colors duration-200">
@@ -48,7 +74,7 @@ function renderNavbar() {
     .map(({ href, label }) => {
       const isActive = currentPage === href
         ? "text-orion-purple font-bold border-l-4 border-orion-purple bg-orion-purple/10"
-        : "text-deep-slate/70 border-l-4 border-transparent";
+        : "text-deep-slate/70 dark:text-white/60 border-l-4 border-transparent";
       return `
         <a href="${href}"
            class="block py-4 px-5 font-label-bold text-base uppercase tracking-wider ${isActive} hover:text-orion-purple hover:border-orion-purple hover:bg-orion-purple/5 rounded-r-xl transition-all">
@@ -58,7 +84,7 @@ function renderNavbar() {
     .join("");
 
   const navbar = `
-    <nav id="main-nav" class="bg-surface/90 backdrop-blur-md fixed top-0 left-0 right-0 z-50 border-b border-outline-variant/30 transition-all duration-300">
+    <nav id="main-nav" class="bg-surface/90 dark:bg-[#0f0f13]/90 backdrop-blur-md fixed top-0 left-0 right-0 z-50 border-b border-outline-variant/30 dark:border-white/[0.08] transition-all duration-300">
       <div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-2 max-w-container-max mx-auto transition-all duration-300" id="nav-inner">
 
         <!-- Logo com efeito pulse no hover -->
@@ -67,26 +93,40 @@ function renderNavbar() {
                class="h-10 w-auto transition-transform duration-300 group-hover:scale-105" style="margin-left: -8px;">
         </a>
 
-        <!-- Links desktop com caixinha no hover -->
+        <!-- Links desktop -->
         <div class="hidden md:flex items-center gap-2">
           ${navLinks}
         </div>
 
-        <!-- Botão CTA desktop -->
-        <button id="nav-cta-btn"
-           class="hidden md:inline-flex bg-primary text-on-primary font-label-bold px-6 py-3 rounded-lg hover:shadow-[0_4px_20px_rgba(98,27,238,0.3)] hover:-translate-y-0.5 transition-all duration-200 border-0 cursor-pointer">
-          Falar com a Orion
-        </button>
+        <!-- Dark toggle + CTA desktop -->
+        <div class="hidden md:flex items-center gap-3">
+          <button id="dark-toggle" onclick="window.toggleDark()"
+            class="w-9 h-9 flex items-center justify-center rounded-lg hover:bg-surface-container dark:hover:bg-[#28282f] transition-colors text-on-surface-variant dark:text-white/60"
+            aria-label="Alternar modo escuro">
+            <span id="dark-icon" class="material-symbols-outlined text-xl" style="font-variation-settings:'FILL' 0,'wght' 400">light_mode</span>
+          </button>
+          <button id="nav-cta-btn"
+             class="bg-primary text-on-primary font-label-bold px-6 py-3 rounded-lg hover:shadow-[0_4px_20px_rgba(98,27,238,0.3)] hover:-translate-y-0.5 transition-all duration-200 border-0 cursor-pointer">
+            Falar com a Orion
+          </button>
+        </div>
 
-        <!-- Botão menu mobile -->
-        <button id="menu-toggle" class="md:hidden w-10 h-10 flex items-center justify-center rounded-lg bg-orion-purple text-white hover:bg-orion-purple/90 transition-colors" aria-label="Abrir menu">
-          <span class="material-symbols-outlined">menu</span>
-        </button>
+        <!-- Dark toggle + menu mobile -->
+        <div class="md:hidden flex items-center gap-2">
+          <button id="dark-toggle-mobile" onclick="window.toggleDark()"
+            class="w-9 h-9 flex items-center justify-center rounded-lg hover:bg-surface-container dark:hover:bg-[#28282f] transition-colors text-on-surface-variant dark:text-white/60"
+            aria-label="Alternar modo escuro">
+            <span id="dark-icon-mobile" class="material-symbols-outlined text-xl" style="font-variation-settings:'FILL' 0,'wght' 400">light_mode</span>
+          </button>
+          <button id="menu-toggle" class="w-10 h-10 flex items-center justify-center rounded-lg bg-orion-purple text-white hover:bg-orion-purple/90 transition-colors" aria-label="Abrir menu">
+            <span class="material-symbols-outlined">menu</span>
+          </button>
+        </div>
       </div>
     </nav>
 
     <!-- Menu mobile — tela cheia, fora da nav -->
-    <div id="mobile-menu" class="md:hidden fixed inset-0 z-[400] flex flex-col bg-background">
+    <div id="mobile-menu" class="md:hidden fixed inset-0 z-[400] flex flex-col bg-background dark:bg-[#0f0f13]">
 
       <!-- Cabeçalho: logo + botão fechar -->
       <div class="flex items-center justify-between px-6 py-3 border-b border-orion-purple/15" style="min-height:56px;">
@@ -106,7 +146,7 @@ function renderNavbar() {
       <!-- Rodapé: redes sociais + CTA -->
       <div class="px-6 pb-10 pt-4 border-t border-orion-purple/15 space-y-6">
         <div class="flex items-center gap-4">
-          <span class="text-muted-gray font-label-bold text-xs uppercase tracking-widest">Siga-nos</span>
+          <span class="text-muted-gray dark:text-white/40 font-label-bold text-xs uppercase tracking-widest">Siga-nos</span>
           <a href="https://instagram.com/_agencia.orion" target="_blank" rel="noopener noreferrer"
              class="w-10 h-10 rounded-full border border-orion-purple/40 flex items-center justify-center text-orion-purple hover:bg-orion-purple/10 transition-all" aria-label="Instagram">
             <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
@@ -178,7 +218,7 @@ function renderNavbar() {
 // ============================================================
 function renderFooter() {
   const footer = `
-    <footer class="bg-on-background text-stark-white pt-16 pb-8 border-t-4 border-orion-purple">
+    <footer class="bg-on-background dark:bg-[#08080d] text-stark-white pt-16 pb-8 border-t-4 border-orion-purple">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
 
         <!-- Coluna 1: Sobre a agência -->
@@ -265,7 +305,7 @@ function renderLeadModal() {
 
   const CHIP_SERVICES = ['Estratégia & Branding','Tráfego Pago','Social Media','Design Gráfico','AudioVisual','Drone','Cobertura de Eventos','Influencers','Sites & Apps','Produção de Áudio','Masterização de Áudio','Não sei ainda'];
   const chipsHTML = CHIP_SERVICES.map(s =>
-    `<button type="button" data-service="${s}" class="lead-chip px-3 py-1.5 rounded-lg border border-outline-variant/60 text-xs font-label-bold text-on-surface bg-surface-container-low hover:border-orion-purple/50 hover:text-orion-purple transition-all cursor-pointer" onclick="this.classList.toggle('lead-chip-selected')">${s}</button>`
+    `<button type="button" data-service="${s}" class="lead-chip px-3 py-1.5 rounded-lg border border-outline-variant/60 dark:border-white/[0.10] text-xs font-label-bold text-on-surface dark:text-[#e8e6ef] bg-surface-container-low dark:bg-[#16161a] hover:border-orion-purple/50 hover:text-orion-purple transition-all cursor-pointer" onclick="this.classList.toggle('lead-chip-selected')">${s}</button>`
   ).join('');
 
   const modal = document.createElement('div');
@@ -276,9 +316,9 @@ function renderLeadModal() {
   modal.style.cssText = 'display:none;position:fixed;inset:0;z-index:600;align-items:center;justify-content:center;padding:1rem;';
   modal.innerHTML = `
     <div class="absolute inset-0 bg-black/55 backdrop-blur-sm" onclick="if(event.target===this)window.closeLeadModal()"></div>
-    <div class="relative bg-white rounded-3xl p-8 w-full max-w-[440px] shadow-2xl">
+    <div class="relative bg-white dark:bg-[#1e1e24] rounded-3xl p-8 w-full max-w-[440px] shadow-2xl">
       <button onclick="window.closeLeadModal()"
-              class="absolute top-4 right-4 w-8 h-8 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors flex items-center justify-center text-gray-500 text-sm border-0 cursor-pointer">
+              class="absolute top-4 right-4 w-8 h-8 rounded-full bg-gray-100 dark:bg-[#28282f] hover:bg-gray-200 dark:hover:bg-[#333338] transition-colors flex items-center justify-center text-gray-500 dark:text-white/50 text-sm border-0 cursor-pointer">
         ✕
       </button>
 
@@ -287,22 +327,22 @@ function renderLeadModal() {
         <span class="font-label-bold text-xs text-orion-purple uppercase tracking-widest">Agência Orion</span>
       </div>
 
-      <h3 id="lead-modal-title" class="font-headline-lg text-deep-slate text-xl mb-2 leading-tight"></h3>
-      <p  id="lead-modal-subtitle" class="text-muted-gray text-sm mb-5 leading-relaxed"></p>
+      <h3 id="lead-modal-title" class="font-headline-lg text-deep-slate dark:text-[#e8e6ef] text-xl mb-2 leading-tight"></h3>
+      <p  id="lead-modal-subtitle" class="text-muted-gray dark:text-[#9994a8] text-sm mb-5 leading-relaxed"></p>
 
       <p id="lead-modal-error" class="text-red-500 text-sm mb-4 hidden"></p>
 
       <div class="flex flex-col gap-3 mb-4">
         <input id="lead-name" type="text" placeholder="Seu nome completo"
-               class="w-full border border-outline-variant rounded-xl px-4 py-3.5 text-sm text-on-surface bg-surface-container-low focus:outline-none focus:border-orion-purple focus:ring-2 focus:ring-orion-purple/20 transition-all placeholder:text-muted-gray/50"
+               class="w-full border border-outline-variant dark:border-white/[0.12] rounded-xl px-4 py-3.5 text-sm text-on-surface dark:text-[#e8e6ef] bg-surface-container-low dark:bg-[#16161a] focus:outline-none focus:border-orion-purple focus:ring-2 focus:ring-orion-purple/20 transition-all placeholder:text-muted-gray/50 dark:placeholder:text-white/30"
                onkeydown="if(event.key==='Enter')document.getElementById('lead-email').focus()">
         <input id="lead-email" type="email" placeholder="Seu melhor e-mail"
-               class="w-full border border-outline-variant rounded-xl px-4 py-3.5 text-sm text-on-surface bg-surface-container-low focus:outline-none focus:border-orion-purple focus:ring-2 focus:ring-orion-purple/20 transition-all placeholder:text-muted-gray/50"
+               class="w-full border border-outline-variant dark:border-white/[0.12] rounded-xl px-4 py-3.5 text-sm text-on-surface dark:text-[#e8e6ef] bg-surface-container-low dark:bg-[#16161a] focus:outline-none focus:border-orion-purple focus:ring-2 focus:ring-orion-purple/20 transition-all placeholder:text-muted-gray/50 dark:placeholder:text-white/30"
                onkeydown="if(event.key==='Enter')window.submitLead()">
       </div>
 
       <div id="lead-chips-section" class="mb-5">
-        <p class="text-xs text-muted-gray/70 mb-2 uppercase tracking-wider font-label-bold">Serviço de interesse <span class="font-normal normal-case tracking-normal opacity-60">(opcional)</span></p>
+        <p class="text-xs text-muted-gray/70 dark:text-white/40 mb-2 uppercase tracking-wider font-label-bold">Serviço de interesse <span class="font-normal normal-case tracking-normal opacity-60">(opcional)</span></p>
         <div class="flex flex-wrap gap-1.5">${chipsHTML}</div>
       </div>
 
@@ -312,7 +352,7 @@ function renderLeadModal() {
       </button>
 
       <button onclick="window.skipLead()"
-              class="w-full text-muted-gray text-sm py-2 hover:text-orion-purple transition-colors bg-transparent border-0 cursor-pointer">
+              class="w-full text-muted-gray dark:text-white/40 text-sm py-2 hover:text-orion-purple transition-colors bg-transparent border-0 cursor-pointer">
         Prefiro ir direto ao WhatsApp →
       </button>
     </div>
@@ -453,6 +493,7 @@ window.sendContactEmail = function(params) {
 // ============================================================
 document.addEventListener("DOMContentLoaded", () => {
   renderNavbar();
+  initDarkMode();
   renderFooter();
   renderWhatsappFab();
   renderLeadModal();

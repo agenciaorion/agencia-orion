@@ -2,6 +2,7 @@
 <html lang="pt-BR" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
+  <script>(function(){var t=localStorage.getItem('orion-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark');}})();</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- SEO Principal -->
@@ -76,7 +77,7 @@
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
-<body class="bg-background text-on-background selection:bg-primary selection:text-white overflow-x-hidden font-body-md">
+<body class="bg-background dark:bg-[#0f0f13] text-on-background dark:text-[#e8e6ef] selection:bg-primary selection:text-white overflow-x-hidden font-body-md">
 
   <!-- NAVBAR -->
   <div id="navbar"></div>
@@ -95,12 +96,12 @@
           <span class="font-label-bold text-primary tracking-widest uppercase">Inteligência Digital</span>
         </div>
 
-        <h1 class="font-display-lg text-[38px] md:text-[68px] text-deep-slate mb-6 leading-[1.08] min-h-[4em] md:min-h-[3em]">
+        <h1 class="font-display-lg text-[38px] md:text-[68px] text-deep-slate dark:text-[#e8e6ef] mb-6 leading-[1.08] min-h-[4em] md:min-h-[3em]">
           <span id="typewriter-full"></span><span id="typewriter-cursor" class="inline-block w-[3px] h-[0.85em] bg-orion-purple align-middle ml-1 animate-pulse"></span>
         </h1>
 
         <div class="border-l-4 border-orion-purple pl-5 mb-8 opacity-0 transition-opacity duration-700" id="hero-sub">
-          <p class="font-body-lg text-body-lg text-muted-gray max-w-xl">
+          <p class="font-body-lg text-body-lg text-muted-gray dark:text-[#9994a8] max-w-xl">
             Impulsionamos o seu crescimento através de soluções baseadas em dados, criatividade e uma visão estratégica focada em resultados reais e sustentáveis.
           </p>
         </div>
@@ -121,10 +122,10 @@
 
     <!-- Ícone de mouse — apenas desktop -->
     <div id="mouse-hint" class="hidden md:flex absolute bottom-24 left-1/2 -translate-x-1/2 flex-col items-center gap-2 transition-opacity duration-500">
-      <div class="w-6 h-10 border-2 border-muted-gray/40 rounded-full flex items-start justify-center pt-1">
+      <div class="w-6 h-10 border-2 border-muted-gray/40 dark:border-white/20 rounded-full flex items-start justify-center pt-1">
         <div class="w-1 h-2 bg-orion-purple rounded-full animate-bounce"></div>
       </div>
-      <span class="font-label-bold text-muted-gray text-xs uppercase tracking-widest">Role para baixo</span>
+      <span class="font-label-bold text-muted-gray dark:text-white/40 text-xs uppercase tracking-widest">Role para baixo</span>
     </div>
 
   </header>
@@ -188,7 +189,7 @@
        Quando tiver o vídeo pronto, substitua VIDEO_ID
        pelo ID do YouTube. Ex: watch?v=ABC123 → ID = ABC123
   ====================================================== -->
-  <section class="pt-6 pb-10 bg-surface-container px-margin-mobile md:px-margin-desktop relative overflow-hidden" id="video">
+  <section class="pt-6 pb-10 bg-surface-container dark:bg-[#1a1a1f] px-margin-mobile md:px-margin-desktop relative overflow-hidden" id="video">
     <div class="max-w-container-max mx-auto">
 
       <!-- Foguete esquerdo — menor, dispara antes -->
@@ -239,10 +240,10 @@
           <span class="orion-dot"></span>
           <span class="font-label-bold text-primary tracking-widest uppercase">Nosso Trabalho</span>
         </div>
-        <h2 class="font-headline-lg text-headline-lg text-deep-slate mb-4">
+        <h2 class="font-headline-lg text-headline-lg text-deep-slate dark:text-[#e8e6ef] mb-4">
           Veja o que a <span class="text-orion-purple">Orion entrega</span>
         </h2>
-        <p class="font-body-md text-body-md text-muted-gray max-w-xl mx-auto">
+        <p class="font-body-md text-body-md text-muted-gray dark:text-[#9994a8] max-w-xl mx-auto">
           Resultados reais, produção de qualidade. Assista e entenda por que somos a escolha certa para o seu negócio.
         </p>
       </div>
@@ -255,9 +256,9 @@
           <span class="font-display-lg text-[64px] font-extrabold text-orion-purple/15 leading-none select-none">+</span>
           <div>
             <p class="font-headline-md text-4xl font-extrabold text-orion-purple">400%</p>
-            <p class="font-label-bold text-xs text-muted-gray uppercase tracking-wider mt-1">Crescimento<br>médio</p>
+            <p class="font-label-bold text-xs text-muted-gray dark:text-[#9994a8] uppercase tracking-wider mt-1">Crescimento<br>médio</p>
           </div>
-          <p class="font-body-md text-xs text-muted-gray max-w-[120px] leading-relaxed">Nossos clientes crescem em média 4x após 6 meses de parceria.</p>
+          <p class="font-body-md text-xs text-muted-gray dark:text-[#9994a8] max-w-[120px] leading-relaxed">Nossos clientes crescem em média 4x após 6 meses de parceria.</p>
           <div class="w-px h-16 bg-gradient-to-b from-orion-purple/30 to-transparent"></div>
         </div>
 
@@ -306,9 +307,9 @@
           <div class="w-px h-16 bg-gradient-to-t from-orion-purple/30 to-transparent"></div>
           <div>
             <p class="font-headline-md text-4xl font-extrabold text-orion-purple">3x</p>
-            <p class="font-label-bold text-xs text-muted-gray uppercase tracking-wider mt-1">Mais<br>conversões</p>
+            <p class="font-label-bold text-xs text-muted-gray dark:text-[#9994a8] uppercase tracking-wider mt-1">Mais<br>conversões</p>
           </div>
-          <p class="font-body-md text-xs text-muted-gray max-w-[120px] leading-relaxed">Estratégias focadas em converter visitantes em clientes reais.</p>
+          <p class="font-body-md text-xs text-muted-gray dark:text-[#9994a8] max-w-[120px] leading-relaxed">Estratégias focadas em converter visitantes em clientes reais.</p>
           <span class="font-display-lg text-[64px] font-extrabold text-orion-purple/15 leading-none select-none">★</span>
         </div>
 
@@ -403,9 +404,9 @@
   <!-- =====================================================
        CTA FINAL
   ====================================================== -->
-  <section class="py-12 bg-surface px-margin-mobile md:px-margin-desktop text-center">
+  <section class="py-12 bg-surface dark:bg-[#0f0f13] px-margin-mobile md:px-margin-desktop text-center">
     <div class="max-w-container-max mx-auto fade-in">
-      <h2 class="font-headline-lg text-[32px] md:text-headline-lg text-deep-slate mb-8">
+      <h2 class="font-headline-lg text-[32px] md:text-headline-lg text-deep-slate dark:text-[#e8e6ef] mb-8">
         Pronto para o próximo nível?
       </h2>
       <div class="flex flex-col items-center gap-6">
