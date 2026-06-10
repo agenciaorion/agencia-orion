@@ -2,7 +2,7 @@
 <html lang="pt-BR" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
-  <script>(function(){var t=localStorage.getItem('orion-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark');}})();</script>
+  <script>(function(){if(sessionStorage.getItem('orion-theme')==='dark'){document.documentElement.classList.add('dark');}})();</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Serviços | Agência Orion — Tráfego Pago, Design, Social Media no Ceará</title>
   <link rel="icon" type="image/jpeg" href="assets/images/logo.jpg">
@@ -261,41 +261,40 @@
           </div>
         </div>
 
-        <!-- Masterização de Áudio -->
-        <div data-service="Masterização de Áudio"
+        <!-- LED Outdoor -->
+        <div data-service="LED Outdoor"
              class="service-card fade-in bg-stark-white dark:bg-[#1e1e24] rounded-3xl p-6 shadow-sm border border-outline-variant/20 dark:border-white/[0.08] hover:border-orion-purple/40 hover:shadow-[0_16px_40px_rgba(98,27,238,0.1)] hover:scale-[1.005] transition-all duration-300">
           <div class="flex items-center gap-3 mb-4">
             <div class="w-11 h-11 bg-orion-purple/10 rounded-xl flex items-center justify-center shrink-0">
-              <span class="material-symbols-outlined text-orion-purple text-2xl">graphic_eq</span>
+              <span class="material-symbols-outlined text-orion-purple text-2xl">tv</span>
             </div>
-            <h2 class="font-headline-lg text-xl text-deep-slate dark:text-[#e8e6ef]">Masterização de Áudio</h2>
+            <h2 class="font-headline-lg text-xl text-deep-slate dark:text-[#e8e6ef]">LED Outdoor</h2>
           </div>
-          <p class="text-muted-gray dark:text-[#9994a8] mb-4 leading-relaxed text-sm">Transformamos gravações brutas em áudio profissional. Tratamos e finalizamos seu conteúdo sonoro para soar com qualidade de estúdio em qualquer plataforma.</p>
+          <p class="text-muted-gray dark:text-[#9994a8] mb-4 leading-relaxed text-sm">Anuncie sua marca nos painéis de LED outdoor em Ipu e Guaraciaba do Norte — visibilidade real para o público local em pontos estratégicos das cidades.</p>
           <div class="flex gap-4 items-stretch">
             <div class="flex flex-col flex-1">
               <ul class="space-y-2 mb-5 text-sm flex-1">
-                <li class="flex items-center gap-2 text-on-surface dark:text-[#e8e6ef]"><span class="material-symbols-outlined text-orion-purple text-base">check_circle</span> Masterização de comerciais e jingles</li>
-                <li class="flex items-center gap-2 text-on-surface dark:text-[#e8e6ef]"><span class="material-symbols-outlined text-orion-purple text-base">check_circle</span> Equalização e remoção de ruídos</li>
-                <li class="flex items-center gap-2 text-on-surface dark:text-[#e8e6ef]"><span class="material-symbols-outlined text-orion-purple text-base">check_circle</span> Masterização para rádio e plataformas digitais</li>
+                <li class="flex items-center gap-2 text-on-surface dark:text-[#e8e6ef]"><span class="material-symbols-outlined text-orion-purple text-base">check_circle</span> Painéis em Ipu e Guaraciaba do Norte</li>
+                <li class="flex items-center gap-2 text-on-surface dark:text-[#e8e6ef]"><span class="material-symbols-outlined text-orion-purple text-base">check_circle</span> Alta visibilidade em pontos estratégicos</li>
+                <li class="flex items-center gap-2 text-on-surface dark:text-[#e8e6ef]"><span class="material-symbols-outlined text-orion-purple text-base">check_circle</span> Criação e veiculação do anúncio incluídas</li>
               </ul>
               <button class="quote-btn quote-btn-sm self-start" data-state="default">
                 <span class="material-symbols-outlined" style="font-size:14px">add</span>
                 Adicionar ao orçamento
               </button>
             </div>
-            <div class="hidden md:block w-48 shrink-0 rounded-xl overflow-hidden bg-deep-slate relative p-5 flex flex-col justify-center">
-              <div class="flex items-end gap-1 h-20 mb-4">
-                <div class="flex-1 rounded-t-sm" style="height:55%; background:rgba(98,27,238,0.35)"></div>
-                <div class="flex-1 rounded-t-sm" style="height:80%; background:rgba(98,27,238,0.55)"></div>
-                <div class="flex-1 rounded-t-sm" style="height:40%; background:rgba(98,27,238,0.30)"></div>
-                <div class="flex-1 rounded-t-sm" style="height:100%; background:#621BEE"></div>
-                <div class="flex-1 rounded-t-sm" style="height:65%; background:rgba(98,27,238,0.50)"></div>
-                <div class="flex-1 rounded-t-sm" style="height:35%; background:rgba(98,27,238,0.25)"></div>
+            <div class="hidden md:block w-48 shrink-0 rounded-xl overflow-hidden bg-deep-slate relative">
+              <!-- pixel grid LED -->
+              <div class="absolute inset-3 flex flex-col gap-1.5 opacity-25">
+                <div class="flex gap-1.5 justify-center"><div class="w-1.5 h-1.5 rounded-full bg-orion-purple"></div><div class="w-1.5 h-1.5 rounded-full bg-white"></div><div class="w-1.5 h-1.5 rounded-full bg-orion-purple"></div><div class="w-1.5 h-1.5 rounded-full bg-white"></div><div class="w-1.5 h-1.5 rounded-full bg-orion-purple"></div><div class="w-1.5 h-1.5 rounded-full bg-white"></div></div>
+                <div class="flex gap-1.5 justify-center"><div class="w-1.5 h-1.5 rounded-full bg-white"></div><div class="w-1.5 h-1.5 rounded-full bg-orion-purple"></div><div class="w-1.5 h-1.5 rounded-full bg-white"></div><div class="w-1.5 h-1.5 rounded-full bg-orion-purple"></div><div class="w-1.5 h-1.5 rounded-full bg-white"></div><div class="w-1.5 h-1.5 rounded-full bg-orion-purple"></div></div>
+                <div class="flex gap-1.5 justify-center"><div class="w-1.5 h-1.5 rounded-full bg-orion-purple"></div><div class="w-1.5 h-1.5 rounded-full bg-white"></div><div class="w-1.5 h-1.5 rounded-full bg-orion-purple"></div><div class="w-1.5 h-1.5 rounded-full bg-white"></div><div class="w-1.5 h-1.5 rounded-full bg-orion-purple"></div><div class="w-1.5 h-1.5 rounded-full bg-white"></div></div>
               </div>
-              <div class="flex items-center gap-2">
-                <span class="material-symbols-outlined text-orion-purple text-lg">graphic_eq</span>
-                <div class="flex-1 h-px bg-orion-purple/20 rounded"></div>
-                <span class="text-orion-purple/60 text-xs font-mono">EQ</span>
+              <div class="absolute inset-0 flex flex-col items-center justify-center gap-2">
+                <span class="material-symbols-outlined text-orion-purple text-[52px]" style="font-variation-settings:'FILL' 0,'wght' 200,'opsz' 48">tv</span>
+              </div>
+              <div class="absolute bottom-3 left-0 right-0 flex justify-center">
+                <span class="text-orion-purple/50 text-[9px] font-mono tracking-widest">IPU · GN</span>
               </div>
             </div>
           </div>

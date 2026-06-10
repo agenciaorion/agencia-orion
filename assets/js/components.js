@@ -22,24 +22,25 @@ const EMAILJS_TEMPLATE_BUDGET = 'template_0aucomk';
 // ============================================================
 function updateDarkIcons() {
   var isDark = document.documentElement.classList.contains('dark');
-  var icon = isDark ? 'dark_mode' : 'light_mode';
+  var icon    = isDark ? 'dark_mode' : 'light_mode';
+  var tooltip = isDark ? 'Ativar modo claro' : 'Ativar modo escuro';
   ['dark-icon', 'dark-icon-mobile'].forEach(function(id) {
     var el = document.getElementById(id);
     if (el) el.textContent = icon;
+  });
+  ['dark-toggle', 'dark-toggle-mobile'].forEach(function(id) {
+    var btn = document.getElementById(id);
+    if (btn) { btn.title = tooltip; btn.setAttribute('aria-label', tooltip); }
   });
 }
 
 window.toggleDark = function() {
   var isDark = document.documentElement.classList.toggle('dark');
-  localStorage.setItem('orion-theme', isDark ? 'dark' : 'light');
+  sessionStorage.setItem('orion-theme', isDark ? 'dark' : 'light');
   updateDarkIcons();
 };
 
 function initDarkMode() {
-  var t = localStorage.getItem('orion-theme');
-  if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-    document.documentElement.classList.add('dark');
-  }
   updateDarkIcons();
 }
 
