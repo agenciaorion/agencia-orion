@@ -251,6 +251,11 @@ header > div > div { opacity: 1 !important; transform: none !important; }
   color: #c4b5fd;
 }
 
+/* --- Dark mode: color-scheme para scrollbars e selects nativos --- */
+.dark {
+  color-scheme: dark;
+}
+
 /* --- Dark mode: fundo radial no hero --- */
 .dark .kinetic-bg {
   background-image: radial-gradient(

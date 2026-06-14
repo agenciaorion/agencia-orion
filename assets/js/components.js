@@ -225,7 +225,7 @@ function renderFooter() {
         <!-- Coluna 1: Sobre a agência -->
         <div class="md:col-span-2">
           <div class="flex items-center gap-2 mb-6">
-            <span class="font-headline-md text-2xl text-stark-white font-bold">Agência Orion</span>
+            <span class="font-headline-md text-2xl text-stark-white font-bold" translate="no">Agência Orion</span>
             <span class="orion-dot"></span>
           </div>
           <p class="text-muted-gray font-body-md max-w-sm mb-8 leading-relaxed">
@@ -267,7 +267,7 @@ function renderFooter() {
 
       <!-- Linha final -->
       <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop border-t border-white/10 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-        <p class="text-muted-gray text-sm">© ${new Date().getFullYear()} Agência Orion. Estratégia & Soluções em Marketing.</p>
+        <p class="text-muted-gray text-sm">© ${new Date().getFullYear()} <span translate="no">Agência Orion</span>. Estratégia & Soluções em Marketing.</p>
         <p class="text-muted-gray text-sm">agenciaorionce.com.br</p>
       </div>
     </footer>
@@ -325,7 +325,7 @@ function renderLeadModal() {
 
       <div class="flex items-center gap-2 mb-5">
         <span class="orion-dot"></span>
-        <span class="font-label-bold text-xs text-orion-purple uppercase tracking-widest">Agência Orion</span>
+        <span class="font-label-bold text-xs text-orion-purple uppercase tracking-widest" translate="no">Agência Orion</span>
       </div>
 
       <h3 id="lead-modal-title" class="font-headline-lg text-deep-slate dark:text-[#e8e6ef] text-xl mb-2 leading-tight"></h3>
