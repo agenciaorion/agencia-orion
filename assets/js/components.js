@@ -5,7 +5,7 @@
 // ============================================================
 
 // --- Número do WhatsApp (edite aqui para atualizar em todo o site) ---
-const WHATSAPP_NUMBER = "5588998157783";
+const WHATSAPP_NUMBER = "5588982346142";
 const WHATSAPP_LINK   = `https://wa.me/${WHATSAPP_NUMBER}`;
 
 // Expõe o link globalmente para páginas que precisam usar fora do components.js
